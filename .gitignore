@@ -43,3 +43,6 @@ next-env.d.ts
 # internal context (kept local-only — never push to GitHub)
 DEV_LOG.md
 Philisophy and Copy.md
+
+# Python venv used for background-removal script (local-only)
+.venv-rembg/
