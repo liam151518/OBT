@@ -270,7 +270,9 @@ const NAV_LINKS: NavLink[] = [
   { label: "Shop", href: "/shop" },
   { label: "Contact", href: "/contact" },
   { label: "Policies", href: "/policies" },
-  { label: "IG", href: "https://instagram.com/" },
+  // IG → internal /ig "coming soon" placeholder until the real
+  // Instagram profile is live. Keeps the nav link intentional.
+  { label: "IG", href: "/ig" },
 ];
 
 /**
