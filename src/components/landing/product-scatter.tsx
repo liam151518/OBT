@@ -170,22 +170,22 @@ const SECTION_PAD_Y = 150;
  */
 const DEFAULT_PRODUCT_ITEMS: ProductSpec[] = [
   // Female (8) — chosen for visual variety: pink, navy, khaki, plum, gray, etc.
-  { src: "/products/female-halter-bra-pink.png",                 alt: "Halter Bra",            width: 1500, height: 1875, accent: "#f4a3b5", slug: "halter-bra" },
-  { src: "/products/female-criss-cross-bra-navy-blue.png",       alt: "Criss-Cross Bra",       width: 1500, height: 1875, accent: "#2a3a6e", slug: "criss-cross-bra" },
-  { src: "/products/female-crop-tank-khaki.png",                 alt: "Crop Tank",             width: 1500, height: 1875, accent: "#b8a07e", slug: "crop-tank" },
-  { src: "/products/female-halter-crop-tank-pink.png",           alt: "Halter Crop Tank",      width: 1500, height: 1875, accent: "#f08aa0", slug: "halter-crop-tank" },
-  { src: "/products/female-essential-hoodie-dark-reddish-purple.png", alt: "Essential Hoodie",  width: 1500, height: 1875, accent: "#5a2a3a", slug: "essential-hoodie" },
-  { src: "/products/female-flare-jeans-light-gray.png",          alt: "Flare Jeans",           width: 1500, height: 1875, accent: "#c8c5c0", slug: "flare-jeans" },
-  { src: "/products/female-a-line-skirt-navy-blue.png",          alt: "A-Line Skirt",          width: 1500, height: 1875, accent: "#1f2d4f", slug: "a-line-skirt" },
-  { src: "/products/female-track-jacket-plum-purple.png",        alt: "Track Jacket",          width: 1500, height: 1875, accent: "#7a3a5a", slug: "track-jacket" },
+  { src: "/products/female-halter-bra-pink.webp",                 alt: "Halter Bra",            width: 1500, height: 1875, accent: "#f4a3b5", slug: "halter-bra" },
+  { src: "/products/female-criss-cross-bra-navy-blue.webp",       alt: "Criss-Cross Bra",       width: 1500, height: 1875, accent: "#2a3a6e", slug: "criss-cross-bra" },
+  { src: "/products/female-crop-tank-khaki.webp",                 alt: "Crop Tank",             width: 1500, height: 1875, accent: "#b8a07e", slug: "crop-tank" },
+  { src: "/products/female-halter-crop-tank-pink.webp",           alt: "Halter Crop Tank",      width: 1500, height: 1875, accent: "#f08aa0", slug: "halter-crop-tank" },
+  { src: "/products/female-essential-hoodie-dark-reddish-purple.webp", alt: "Essential Hoodie",  width: 1500, height: 1875, accent: "#5a2a3a", slug: "essential-hoodie" },
+  { src: "/products/female-flare-jeans-light-gray.webp",          alt: "Flare Jeans",           width: 1500, height: 1875, accent: "#c8c5c0", slug: "flare-jeans" },
+  { src: "/products/female-a-line-skirt-navy-blue.webp",          alt: "A-Line Skirt",          width: 1500, height: 1875, accent: "#1f2d4f", slug: "a-line-skirt" },
+  { src: "/products/female-track-jacket-plum-purple.webp",        alt: "Track Jacket",          width: 1500, height: 1875, accent: "#7a3a5a", slug: "track-jacket" },
   // Male (7) — blue, tan, gray, brown, etc.
-  { src: "/products/male-heavyweight-tank-royal-blue.png",       alt: "Heavyweight Tank",      width: 1500, height: 1875, accent: "#3a5fb8", slug: "heavyweight-tank" },
-  { src: "/products/male-waffle-knit-tee-light-apricot.png",     alt: "Waffle Knit Tee",       width: 1500, height: 1875, accent: "#e8b89a", slug: "waffle-knit-tee" },
-  { src: "/products/male-boxy-tank-gray.png",                    alt: "Boxy Tank",             width: 1500, height: 1875, accent: "#7a7a7e", slug: "boxy-tank" },
-  { src: "/products/male-frayed-hoodie-brown.png",               alt: "Frayed Hoodie",         width: 1500, height: 1875, accent: "#5a3a28", slug: "frayed-hoodie" },
-  { src: "/products/male-snow-wash-sweatpants-light-gray.png",   alt: "Snow Wash Sweatpants",  width: 1500, height: 1875, accent: "#bdb8b0", slug: "snow-wash-sweatpants" },
-  { src: "/products/male-mesh-shorts-sky-blue.png",              alt: "Mesh Shorts",           width: 1500, height: 1875, accent: "#8ac4d8", slug: "mesh-shorts" },
-  { src: "/products/male-quarter-zip-tee-static-blue.png",       alt: "Quarter-Zip Tee",       width: 1500, height: 1875, accent: "#4a5a7a", slug: "quarter-zip-tee" },
+  { src: "/products/male-heavyweight-tank-royal-blue.webp",       alt: "Heavyweight Tank",      width: 1500, height: 1875, accent: "#3a5fb8", slug: "heavyweight-tank" },
+  { src: "/products/male-waffle-knit-tee-light-apricot.webp",     alt: "Waffle Knit Tee",       width: 1500, height: 1875, accent: "#e8b89a", slug: "waffle-knit-tee" },
+  { src: "/products/male-boxy-tank-gray.webp",                    alt: "Boxy Tank",             width: 1500, height: 1875, accent: "#7a7a7e", slug: "boxy-tank" },
+  { src: "/products/male-frayed-hoodie-brown.webp",               alt: "Frayed Hoodie",         width: 1500, height: 1875, accent: "#5a3a28", slug: "frayed-hoodie" },
+  { src: "/products/male-snow-wash-sweatpants-light-gray.webp",   alt: "Snow Wash Sweatpants",  width: 1500, height: 1875, accent: "#bdb8b0", slug: "snow-wash-sweatpants" },
+  { src: "/products/male-mesh-shorts-sky-blue.webp",              alt: "Mesh Shorts",           width: 1500, height: 1875, accent: "#8ac4d8", slug: "mesh-shorts" },
+  { src: "/products/male-quarter-zip-tee-static-blue.webp",       alt: "Quarter-Zip Tee",       width: 1500, height: 1875, accent: "#4a5a7a", slug: "quarter-zip-tee" },
 ];
 
 const SEED = 0x4f5e6d7c;

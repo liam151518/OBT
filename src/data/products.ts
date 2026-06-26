@@ -45,7 +45,7 @@ export type Product = {
   /** The single variant shown in the landing scatter + shop grid */
   representative: {
     colorName: string;
-    /** Public URL, e.g. "/products/f-halter-bra-pink.png" */
+    /** Public URL, e.g. "/products/f-halter-bra-pink.webp" */
     src: string;
     width: number;
     height: number;
@@ -86,7 +86,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 6,
     representative: {
       colorName: "Navy Blue",
-      src: "/products/female-a-line-skirt-navy-blue-1.png",
+      src: "/products/female-a-line-skirt-navy-blue-1.webp",
       width: 1500,
       height: 1875
     },
@@ -98,60 +98,60 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Light Apricot",
         colorId: "10586",
-        src: "/products/female-a-line-skirt-light-apricot-1.png",
+        src: "/products/female-a-line-skirt-light-apricot-1.webp",
         images: [
-          "/products/female-a-line-skirt-light-apricot-1.png",
-          "/products/female-a-line-skirt-light-apricot-2.png"
+          "/products/female-a-line-skirt-light-apricot-1.webp",
+          "/products/female-a-line-skirt-light-apricot-2.webp"
         ],
         accent: "#eac8a8"
       },
       {
         colorName: "Sky Blue",
         colorId: "10584",
-        src: "/products/female-a-line-skirt-sky-blue-1.png",
+        src: "/products/female-a-line-skirt-sky-blue-1.webp",
         images: [
-          "/products/female-a-line-skirt-sky-blue-1.png",
-          "/products/female-a-line-skirt-sky-blue-2.png"
+          "/products/female-a-line-skirt-sky-blue-1.webp",
+          "/products/female-a-line-skirt-sky-blue-2.webp"
         ],
         accent: "#8ac4d8"
       },
       {
         colorName: "Lavender",
         colorId: "10585",
-        src: "/products/female-a-line-skirt-lavender-1.png",
+        src: "/products/female-a-line-skirt-lavender-1.webp",
         images: [
-          "/products/female-a-line-skirt-lavender-1.png",
-          "/products/female-a-line-skirt-lavender-2.png"
+          "/products/female-a-line-skirt-lavender-1.webp",
+          "/products/female-a-line-skirt-lavender-2.webp"
         ],
         accent: "#b8a0d8"
       },
       {
         colorName: "Wine Red",
         colorId: "10587",
-        src: "/products/female-a-line-skirt-wine-red-1.png",
+        src: "/products/female-a-line-skirt-wine-red-1.webp",
         images: [
-          "/products/female-a-line-skirt-wine-red-1.png",
-          "/products/female-a-line-skirt-wine-red-2.png"
+          "/products/female-a-line-skirt-wine-red-1.webp",
+          "/products/female-a-line-skirt-wine-red-2.webp"
         ],
         accent: "#7a2a3a"
       },
       {
         colorName: "Blackish Green",
         colorId: "10583",
-        src: "/products/female-a-line-skirt-blackish-green-1.png",
+        src: "/products/female-a-line-skirt-blackish-green-1.webp",
         images: [
-          "/products/female-a-line-skirt-blackish-green-1.png",
-          "/products/female-a-line-skirt-blackish-green-2.png"
+          "/products/female-a-line-skirt-blackish-green-1.webp",
+          "/products/female-a-line-skirt-blackish-green-2.webp"
         ],
         accent: "#2a3a2a"
       },
       {
         colorName: "Navy Blue",
         colorId: "10582",
-        src: "/products/female-a-line-skirt-navy-blue-1.png",
+        src: "/products/female-a-line-skirt-navy-blue-1.webp",
         images: [
-          "/products/female-a-line-skirt-navy-blue-1.png",
-          "/products/female-a-line-skirt-navy-blue-2.png"
+          "/products/female-a-line-skirt-navy-blue-1.webp",
+          "/products/female-a-line-skirt-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       }
@@ -172,7 +172,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Gray Purple",
-      src: "/products/female-ankle-leggings-gray-purple-1.png",
+      src: "/products/female-ankle-leggings-gray-purple-1.webp",
       width: 1500,
       height: 1875
     },
@@ -184,30 +184,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9449",
-        src: "/products/female-ankle-leggings-black-1.png",
+        src: "/products/female-ankle-leggings-black-1.webp",
         images: [
-          "/products/female-ankle-leggings-black-1.png",
-          "/products/female-ankle-leggings-black-2.png"
+          "/products/female-ankle-leggings-black-1.webp",
+          "/products/female-ankle-leggings-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Gray Purple",
         colorId: "10922",
-        src: "/products/female-ankle-leggings-gray-purple-1.png",
+        src: "/products/female-ankle-leggings-gray-purple-1.webp",
         images: [
-          "/products/female-ankle-leggings-gray-purple-1.png",
-          "/products/female-ankle-leggings-gray-purple-2.png"
+          "/products/female-ankle-leggings-gray-purple-1.webp",
+          "/products/female-ankle-leggings-gray-purple-2.webp"
         ],
         accent: "#8a7a9a"
       },
       {
         colorName: "Army Green",
         colorId: "9452",
-        src: "/products/female-ankle-leggings-army-green-1.png",
+        src: "/products/female-ankle-leggings-army-green-1.webp",
         images: [
-          "/products/female-ankle-leggings-army-green-1.png",
-          "/products/female-ankle-leggings-army-green-2.png"
+          "/products/female-ankle-leggings-army-green-1.webp",
+          "/products/female-ankle-leggings-army-green-2.webp"
         ],
         accent: "#4a5a3a"
       }
@@ -228,7 +228,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Flower Gray",
-      src: "/products/female-batwing-tee-flower-gray-1.png",
+      src: "/products/female-batwing-tee-flower-gray-1.webp",
       width: 1500,
       height: 1875
     },
@@ -240,40 +240,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9863",
-        src: "/products/female-batwing-tee-black-1.png",
+        src: "/products/female-batwing-tee-black-1.webp",
         images: [
-          "/products/female-batwing-tee-black-1.png",
-          "/products/female-batwing-tee-black-2.png"
+          "/products/female-batwing-tee-black-1.webp",
+          "/products/female-batwing-tee-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9864",
-        src: "/products/female-batwing-tee-white-1.png",
+        src: "/products/female-batwing-tee-white-1.webp",
         images: [
-          "/products/female-batwing-tee-white-1.png",
-          "/products/female-batwing-tee-white-2.png"
+          "/products/female-batwing-tee-white-1.webp",
+          "/products/female-batwing-tee-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Apricot",
         colorId: "9865",
-        src: "/products/female-batwing-tee-apricot-1.png",
+        src: "/products/female-batwing-tee-apricot-1.webp",
         images: [
-          "/products/female-batwing-tee-apricot-1.png",
-          "/products/female-batwing-tee-apricot-2.png"
+          "/products/female-batwing-tee-apricot-1.webp",
+          "/products/female-batwing-tee-apricot-2.webp"
         ],
         accent: "#e8b89a"
       },
       {
         colorName: "Flower Gray",
         colorId: "9861",
-        src: "/products/female-batwing-tee-flower-gray-1.png",
+        src: "/products/female-batwing-tee-flower-gray-1.webp",
         images: [
-          "/products/female-batwing-tee-flower-gray-1.png",
-          "/products/female-batwing-tee-flower-gray-2.png"
+          "/products/female-batwing-tee-flower-gray-1.webp",
+          "/products/female-batwing-tee-flower-gray-2.webp"
         ],
         accent: "#b8b5b0"
       }
@@ -294,7 +294,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Black",
-      src: "/products/female-binding-shorts-black-1.png",
+      src: "/products/female-binding-shorts-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -306,50 +306,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9965",
-        src: "/products/female-binding-shorts-black-1.png",
+        src: "/products/female-binding-shorts-black-1.webp",
         images: [
-          "/products/female-binding-shorts-black-1.png",
-          "/products/female-binding-shorts-black-2.png"
+          "/products/female-binding-shorts-black-1.webp",
+          "/products/female-binding-shorts-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9964",
-        src: "/products/female-binding-shorts-white-1.png",
+        src: "/products/female-binding-shorts-white-1.webp",
         images: [
-          "/products/female-binding-shorts-white-1.png",
-          "/products/female-binding-shorts-white-2.png"
+          "/products/female-binding-shorts-white-1.webp",
+          "/products/female-binding-shorts-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Flower Gray",
         colorId: "9967",
-        src: "/products/female-binding-shorts-flower-gray-1.png",
+        src: "/products/female-binding-shorts-flower-gray-1.webp",
         images: [
-          "/products/female-binding-shorts-flower-gray-1.png",
-          "/products/female-binding-shorts-flower-gray-2.png"
+          "/products/female-binding-shorts-flower-gray-1.webp",
+          "/products/female-binding-shorts-flower-gray-2.webp"
         ],
         accent: "#b8b5b0"
       },
       {
         colorName: "Red",
         colorId: "9966",
-        src: "/products/female-binding-shorts-red-1.png",
+        src: "/products/female-binding-shorts-red-1.webp",
         images: [
-          "/products/female-binding-shorts-red-1.png",
-          "/products/female-binding-shorts-red-2.png"
+          "/products/female-binding-shorts-red-1.webp",
+          "/products/female-binding-shorts-red-2.webp"
         ],
         accent: "#c8424a"
       },
       {
         colorName: "Royal Blue",
         colorId: "9968",
-        src: "/products/female-binding-shorts-royal-blue-1.png",
+        src: "/products/female-binding-shorts-royal-blue-1.webp",
         images: [
-          "/products/female-binding-shorts-royal-blue-1.png",
-          "/products/female-binding-shorts-royal-blue-2.png"
+          "/products/female-binding-shorts-royal-blue-1.webp",
+          "/products/female-binding-shorts-royal-blue-2.webp"
         ],
         accent: "#3a5fb8"
       }
@@ -370,7 +370,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Red",
-      src: "/products/female-color-block-tank-red-1.png",
+      src: "/products/female-color-block-tank-red-1.webp",
       width: 1500,
       height: 1875
     },
@@ -382,30 +382,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "10372",
-        src: "/products/female-color-block-tank-black-1.png",
+        src: "/products/female-color-block-tank-black-1.webp",
         images: [
-          "/products/female-color-block-tank-black-1.png",
-          "/products/female-color-block-tank-black-2.png"
+          "/products/female-color-block-tank-black-1.webp",
+          "/products/female-color-block-tank-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Light Pink",
         colorId: "10373",
-        src: "/products/female-color-block-tank-light-pink-1.png",
+        src: "/products/female-color-block-tank-light-pink-1.webp",
         images: [
-          "/products/female-color-block-tank-light-pink-1.png",
-          "/products/female-color-block-tank-light-pink-2.png"
+          "/products/female-color-block-tank-light-pink-1.webp",
+          "/products/female-color-block-tank-light-pink-2.webp"
         ],
         accent: "#808080"
       },
       {
         colorName: "Red",
         colorId: "10375",
-        src: "/products/female-color-block-tank-red-1.png",
+        src: "/products/female-color-block-tank-red-1.webp",
         images: [
-          "/products/female-color-block-tank-red-1.png",
-          "/products/female-color-block-tank-red-2.png"
+          "/products/female-color-block-tank-red-1.webp",
+          "/products/female-color-block-tank-red-2.webp"
         ],
         accent: "#c8424a"
       },
@@ -435,7 +435,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Coffee",
-      src: "/products/female-criss-cross-bra-coffee-1.png",
+      src: "/products/female-criss-cross-bra-coffee-1.webp",
       width: 1500,
       height: 1875
     },
@@ -447,40 +447,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "White",
         colorId: "10140",
-        src: "/products/female-criss-cross-bra-white-1.png",
+        src: "/products/female-criss-cross-bra-white-1.webp",
         images: [
-          "/products/female-criss-cross-bra-white-1.png",
-          "/products/female-criss-cross-bra-white-2.png"
+          "/products/female-criss-cross-bra-white-1.webp",
+          "/products/female-criss-cross-bra-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Blackish Green",
         colorId: "10151",
-        src: "/products/female-criss-cross-bra-blackish-green-1.png",
+        src: "/products/female-criss-cross-bra-blackish-green-1.webp",
         images: [
-          "/products/female-criss-cross-bra-blackish-green-1.png",
-          "/products/female-criss-cross-bra-blackish-green-2.png"
+          "/products/female-criss-cross-bra-blackish-green-1.webp",
+          "/products/female-criss-cross-bra-blackish-green-2.webp"
         ],
         accent: "#2a3a2a"
       },
       {
         colorName: "Coffee",
         colorId: "10144",
-        src: "/products/female-criss-cross-bra-coffee-1.png",
+        src: "/products/female-criss-cross-bra-coffee-1.webp",
         images: [
-          "/products/female-criss-cross-bra-coffee-1.png",
-          "/products/female-criss-cross-bra-coffee-2.png"
+          "/products/female-criss-cross-bra-coffee-1.webp",
+          "/products/female-criss-cross-bra-coffee-2.webp"
         ],
         accent: "#5a3a20"
       },
       {
         colorName: "Navy Blue",
         colorId: "10142",
-        src: "/products/female-criss-cross-bra-navy-blue-1.png",
+        src: "/products/female-criss-cross-bra-navy-blue-1.webp",
         images: [
-          "/products/female-criss-cross-bra-navy-blue-1.png",
-          "/products/female-criss-cross-bra-navy-blue-2.png"
+          "/products/female-criss-cross-bra-navy-blue-1.webp",
+          "/products/female-criss-cross-bra-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       }
@@ -501,7 +501,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Light Purple",
-      src: "/products/female-crop-tank-light-purple-1.png",
+      src: "/products/female-crop-tank-light-purple-1.webp",
       width: 1500,
       height: 1875
     },
@@ -513,50 +513,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9695",
-        src: "/products/female-crop-tank-black-1.png",
+        src: "/products/female-crop-tank-black-1.webp",
         images: [
-          "/products/female-crop-tank-black-1.png",
-          "/products/female-crop-tank-black-2.png"
+          "/products/female-crop-tank-black-1.webp",
+          "/products/female-crop-tank-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9694",
-        src: "/products/female-crop-tank-white-1.png",
+        src: "/products/female-crop-tank-white-1.webp",
         images: [
-          "/products/female-crop-tank-white-1.png",
-          "/products/female-crop-tank-white-2.png"
+          "/products/female-crop-tank-white-1.webp",
+          "/products/female-crop-tank-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Khaki",
         colorId: "9696",
-        src: "/products/female-crop-tank-khaki-1.png",
+        src: "/products/female-crop-tank-khaki-1.webp",
         images: [
-          "/products/female-crop-tank-khaki-1.png",
-          "/products/female-crop-tank-khaki-2.png"
+          "/products/female-crop-tank-khaki-1.webp",
+          "/products/female-crop-tank-khaki-2.webp"
         ],
         accent: "#b8a07e"
       },
       {
         colorName: "Light Purple",
         colorId: "9691",
-        src: "/products/female-crop-tank-light-purple-1.png",
+        src: "/products/female-crop-tank-light-purple-1.webp",
         images: [
-          "/products/female-crop-tank-light-purple-1.png",
-          "/products/female-crop-tank-light-purple-2.png"
+          "/products/female-crop-tank-light-purple-1.webp",
+          "/products/female-crop-tank-light-purple-2.webp"
         ],
         accent: "#c8b0e0"
       },
       {
         colorName: "Brown",
         colorId: "9693",
-        src: "/products/female-crop-tank-brown-1.png",
+        src: "/products/female-crop-tank-brown-1.webp",
         images: [
-          "/products/female-crop-tank-brown-1.png",
-          "/products/female-crop-tank-brown-2.png"
+          "/products/female-crop-tank-brown-1.webp",
+          "/products/female-crop-tank-brown-2.webp"
         ],
         accent: "#5a3a28"
       }
@@ -577,7 +577,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 1,
     representative: {
       colorName: "Blue",
-      src: "/products/female-denim-shorts-blue-1.png",
+      src: "/products/female-denim-shorts-blue-1.webp",
       width: 1500,
       height: 1875
     },
@@ -589,10 +589,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Blue",
         colorId: "9928",
-        src: "/products/female-denim-shorts-blue-1.png",
+        src: "/products/female-denim-shorts-blue-1.webp",
         images: [
-          "/products/female-denim-shorts-blue-1.png",
-          "/products/female-denim-shorts-blue-2.png"
+          "/products/female-denim-shorts-blue-1.webp",
+          "/products/female-denim-shorts-blue-2.webp"
         ],
         accent: "#4a6fb8"
       }
@@ -614,7 +614,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 1,
     representative: {
       colorName: "Black",
-      src: "/products/female-drawstring-shorts-black-1.png",
+      src: "/products/female-drawstring-shorts-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -626,10 +626,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8837",
-        src: "/products/female-drawstring-shorts-black-1.png",
+        src: "/products/female-drawstring-shorts-black-1.webp",
         images: [
-          "/products/female-drawstring-shorts-black-1.png",
-          "/products/female-drawstring-shorts-black-2.png"
+          "/products/female-drawstring-shorts-black-1.webp",
+          "/products/female-drawstring-shorts-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -650,7 +650,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 7,
     representative: {
       colorName: "Flower Gray",
-      src: "/products/female-essential-bra-flower-gray-1.png",
+      src: "/products/female-essential-bra-flower-gray-1.webp",
       width: 1500,
       height: 1875
     },
@@ -662,70 +662,70 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9504",
-        src: "/products/female-essential-bra-black-1.png",
+        src: "/products/female-essential-bra-black-1.webp",
         images: [
-          "/products/female-essential-bra-black-1.png",
-          "/products/female-essential-bra-black-2.png"
+          "/products/female-essential-bra-black-1.webp",
+          "/products/female-essential-bra-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9505",
-        src: "/products/female-essential-bra-white-1.png",
+        src: "/products/female-essential-bra-white-1.webp",
         images: [
-          "/products/female-essential-bra-white-1.png",
-          "/products/female-essential-bra-white-2.png"
+          "/products/female-essential-bra-white-1.webp",
+          "/products/female-essential-bra-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Sky Blue",
         colorId: "9510",
-        src: "/products/female-essential-bra-sky-blue-1.png",
+        src: "/products/female-essential-bra-sky-blue-1.webp",
         images: [
-          "/products/female-essential-bra-sky-blue-1.png",
-          "/products/female-essential-bra-sky-blue-2.png"
+          "/products/female-essential-bra-sky-blue-1.webp",
+          "/products/female-essential-bra-sky-blue-2.webp"
         ],
         accent: "#8ac4d8"
       },
       {
         colorName: "Flower Gray",
         colorId: "9506",
-        src: "/products/female-essential-bra-flower-gray-1.png",
+        src: "/products/female-essential-bra-flower-gray-1.webp",
         images: [
-          "/products/female-essential-bra-flower-gray-1.png",
-          "/products/female-essential-bra-flower-gray-2.png"
+          "/products/female-essential-bra-flower-gray-1.webp",
+          "/products/female-essential-bra-flower-gray-2.webp"
         ],
         accent: "#b8b5b0"
       },
       {
         colorName: "Brick Red",
         colorId: "9508",
-        src: "/products/female-essential-bra-brick-red-1.png",
+        src: "/products/female-essential-bra-brick-red-1.webp",
         images: [
-          "/products/female-essential-bra-brick-red-1.png",
-          "/products/female-essential-bra-brick-red-2.png"
+          "/products/female-essential-bra-brick-red-1.webp",
+          "/products/female-essential-bra-brick-red-2.webp"
         ],
         accent: "#a8424a"
       },
       {
         colorName: "Ash Purple",
         colorId: "9509",
-        src: "/products/female-essential-bra-ash-purple-1.png",
+        src: "/products/female-essential-bra-ash-purple-1.webp",
         images: [
-          "/products/female-essential-bra-ash-purple-1.png",
-          "/products/female-essential-bra-ash-purple-2.png"
+          "/products/female-essential-bra-ash-purple-1.webp",
+          "/products/female-essential-bra-ash-purple-2.webp"
         ],
         accent: "#8a7a9a"
       },
       {
         colorName: "Dark Purple",
         colorId: "9507",
-        src: "/products/female-essential-bra-dark-purple-1.png",
+        src: "/products/female-essential-bra-dark-purple-1.webp",
         images: [
-          "/products/female-essential-bra-dark-purple-1.png",
-          "/products/female-essential-bra-dark-purple-2.png"
+          "/products/female-essential-bra-dark-purple-1.webp",
+          "/products/female-essential-bra-dark-purple-2.webp"
         ],
         accent: "#4a2a5a"
       }
@@ -746,7 +746,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Black",
-      src: "/products/female-essential-hoodie-black-1.png",
+      src: "/products/female-essential-hoodie-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -758,10 +758,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "7885",
-        src: "/products/female-essential-hoodie-black-1.png",
+        src: "/products/female-essential-hoodie-black-1.webp",
         images: [
-          "/products/female-essential-hoodie-black-1.png",
-          "/products/female-essential-hoodie-black-2.png"
+          "/products/female-essential-hoodie-black-1.webp",
+          "/products/female-essential-hoodie-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
@@ -775,10 +775,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Dark Reddish Purple",
         colorId: "7883",
-        src: "/products/female-essential-hoodie-dark-reddish-purple-1.png",
+        src: "/products/female-essential-hoodie-dark-reddish-purple-1.webp",
         images: [
-          "/products/female-essential-hoodie-dark-reddish-purple-1.png",
-          "/products/female-essential-hoodie-dark-reddish-purple-2.png"
+          "/products/female-essential-hoodie-dark-reddish-purple-1.webp",
+          "/products/female-essential-hoodie-dark-reddish-purple-2.webp"
         ],
         accent: "#5a2a3a"
       }
@@ -798,7 +798,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Black",
-      src: "/products/female-flare-jeans-black-1.png",
+      src: "/products/female-flare-jeans-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -810,30 +810,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9426",
-        src: "/products/female-flare-jeans-black-1.png",
+        src: "/products/female-flare-jeans-black-1.webp",
         images: [
-          "/products/female-flare-jeans-black-1.png",
-          "/products/female-flare-jeans-black-2.png"
+          "/products/female-flare-jeans-black-1.webp",
+          "/products/female-flare-jeans-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9471",
-        src: "/products/female-flare-jeans-white-1.png",
+        src: "/products/female-flare-jeans-white-1.webp",
         images: [
-          "/products/female-flare-jeans-white-1.png",
-          "/products/female-flare-jeans-white-2.png"
+          "/products/female-flare-jeans-white-1.webp",
+          "/products/female-flare-jeans-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Light Gray",
         colorId: "9472",
-        src: "/products/female-flare-jeans-light-gray-1.png",
+        src: "/products/female-flare-jeans-light-gray-1.webp",
         images: [
-          "/products/female-flare-jeans-light-gray-1.png",
-          "/products/female-flare-jeans-light-gray-2.png"
+          "/products/female-flare-jeans-light-gray-1.webp",
+          "/products/female-flare-jeans-light-gray-2.webp"
         ],
         accent: "#c8c5c0"
       }
@@ -855,7 +855,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Black",
-      src: "/products/female-full-zip-jacket-black-1.png",
+      src: "/products/female-full-zip-jacket-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -867,30 +867,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9907",
-        src: "/products/female-full-zip-jacket-black-1.png",
+        src: "/products/female-full-zip-jacket-black-1.webp",
         images: [
-          "/products/female-full-zip-jacket-black-1.png",
-          "/products/female-full-zip-jacket-black-2.png"
+          "/products/female-full-zip-jacket-black-1.webp",
+          "/products/female-full-zip-jacket-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9906",
-        src: "/products/female-full-zip-jacket-white-1.png",
+        src: "/products/female-full-zip-jacket-white-1.webp",
         images: [
-          "/products/female-full-zip-jacket-white-1.png",
-          "/products/female-full-zip-jacket-white-2.png"
+          "/products/female-full-zip-jacket-white-1.webp",
+          "/products/female-full-zip-jacket-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Purple",
         colorId: "9908",
-        src: "/products/female-full-zip-jacket-purple-1.png",
+        src: "/products/female-full-zip-jacket-purple-1.webp",
         images: [
-          "/products/female-full-zip-jacket-purple-1.png",
-          "/products/female-full-zip-jacket-purple-2.png"
+          "/products/female-full-zip-jacket-purple-1.webp",
+          "/products/female-full-zip-jacket-purple-2.webp"
         ],
         accent: "#7a4a8a"
       }
@@ -912,7 +912,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 7,
     representative: {
       colorName: "Black",
-      src: "/products/female-halter-bra-black-1.png",
+      src: "/products/female-halter-bra-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -924,70 +924,70 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8924",
-        src: "/products/female-halter-bra-black-1.png",
+        src: "/products/female-halter-bra-black-1.webp",
         images: [
-          "/products/female-halter-bra-black-1.png",
-          "/products/female-halter-bra-black-2.png"
+          "/products/female-halter-bra-black-1.webp",
+          "/products/female-halter-bra-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Yellow",
         colorId: "8927",
-        src: "/products/female-halter-bra-yellow-1.png",
+        src: "/products/female-halter-bra-yellow-1.webp",
         images: [
-          "/products/female-halter-bra-yellow-1.png",
-          "/products/female-halter-bra-yellow-2.png"
+          "/products/female-halter-bra-yellow-1.webp",
+          "/products/female-halter-bra-yellow-2.webp"
         ],
         accent: "#e8c84a"
       },
       {
         colorName: "Pink",
         colorId: "8930",
-        src: "/products/female-halter-bra-pink-1.png",
+        src: "/products/female-halter-bra-pink-1.webp",
         images: [
-          "/products/female-halter-bra-pink-1.png",
-          "/products/female-halter-bra-pink-2.png"
+          "/products/female-halter-bra-pink-1.webp",
+          "/products/female-halter-bra-pink-2.webp"
         ],
         accent: "#f4a3b5"
       },
       {
         colorName: "Purple",
         colorId: "8929",
-        src: "/products/female-halter-bra-purple-1.png",
+        src: "/products/female-halter-bra-purple-1.webp",
         images: [
-          "/products/female-halter-bra-purple-1.png",
-          "/products/female-halter-bra-purple-2.png"
+          "/products/female-halter-bra-purple-1.webp",
+          "/products/female-halter-bra-purple-2.webp"
         ],
         accent: "#7a4a8a"
       },
       {
         colorName: "Blue",
         colorId: "8925",
-        src: "/products/female-halter-bra-blue-1.png",
+        src: "/products/female-halter-bra-blue-1.webp",
         images: [
-          "/products/female-halter-bra-blue-1.png",
-          "/products/female-halter-bra-blue-2.png"
+          "/products/female-halter-bra-blue-1.webp",
+          "/products/female-halter-bra-blue-2.webp"
         ],
         accent: "#4a6fb8"
       },
       {
         colorName: "Orange",
         colorId: "8923",
-        src: "/products/female-halter-bra-orange-1.png",
+        src: "/products/female-halter-bra-orange-1.webp",
         images: [
-          "/products/female-halter-bra-orange-1.png",
-          "/products/female-halter-bra-orange-2.png"
+          "/products/female-halter-bra-orange-1.webp",
+          "/products/female-halter-bra-orange-2.webp"
         ],
         accent: "#e8924a"
       },
       {
         colorName: "Brown",
         colorId: "8926",
-        src: "/products/female-halter-bra-brown-1.png",
+        src: "/products/female-halter-bra-brown-1.webp",
         images: [
-          "/products/female-halter-bra-brown-1.png",
-          "/products/female-halter-bra-brown-2.png"
+          "/products/female-halter-bra-brown-1.webp",
+          "/products/female-halter-bra-brown-2.webp"
         ],
         accent: "#5a3a28"
       }
@@ -1008,7 +1008,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Yellow",
-      src: "/products/female-halter-crop-tank-yellow-1.png",
+      src: "/products/female-halter-crop-tank-yellow-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1020,50 +1020,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "White",
         colorId: "9947",
-        src: "/products/female-halter-crop-tank-white-1.png",
+        src: "/products/female-halter-crop-tank-white-1.webp",
         images: [
-          "/products/female-halter-crop-tank-white-1.png",
-          "/products/female-halter-crop-tank-white-2.png"
+          "/products/female-halter-crop-tank-white-1.webp",
+          "/products/female-halter-crop-tank-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Yellow",
         colorId: "9945",
-        src: "/products/female-halter-crop-tank-yellow-1.png",
+        src: "/products/female-halter-crop-tank-yellow-1.webp",
         images: [
-          "/products/female-halter-crop-tank-yellow-1.png",
-          "/products/female-halter-crop-tank-yellow-2.png"
+          "/products/female-halter-crop-tank-yellow-1.webp",
+          "/products/female-halter-crop-tank-yellow-2.webp"
         ],
         accent: "#e8c84a"
       },
       {
         colorName: "Pink",
         colorId: "9946",
-        src: "/products/female-halter-crop-tank-pink-1.png",
+        src: "/products/female-halter-crop-tank-pink-1.webp",
         images: [
-          "/products/female-halter-crop-tank-pink-1.png",
-          "/products/female-halter-crop-tank-pink-2.png"
+          "/products/female-halter-crop-tank-pink-1.webp",
+          "/products/female-halter-crop-tank-pink-2.webp"
         ],
         accent: "#f4a3b5"
       },
       {
         colorName: "Navy Blue",
         colorId: "9948",
-        src: "/products/female-halter-crop-tank-navy-blue-1.png",
+        src: "/products/female-halter-crop-tank-navy-blue-1.webp",
         images: [
-          "/products/female-halter-crop-tank-navy-blue-1.png",
-          "/products/female-halter-crop-tank-navy-blue-2.png"
+          "/products/female-halter-crop-tank-navy-blue-1.webp",
+          "/products/female-halter-crop-tank-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       },
       {
         colorName: "Black",
         colorId: "9949",
-        src: "/products/female-halter-crop-tank-black-1.png",
+        src: "/products/female-halter-crop-tank-black-1.webp",
         images: [
-          "/products/female-halter-crop-tank-black-1.png",
-          "/products/female-halter-crop-tank-black-2.png"
+          "/products/female-halter-crop-tank-black-1.webp",
+          "/products/female-halter-crop-tank-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -1084,7 +1084,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Black",
-      src: "/products/female-maxi-skirt-black-1.png",
+      src: "/products/female-maxi-skirt-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1096,30 +1096,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9855",
-        src: "/products/female-maxi-skirt-black-1.png",
+        src: "/products/female-maxi-skirt-black-1.webp",
         images: [
-          "/products/female-maxi-skirt-black-1.png",
-          "/products/female-maxi-skirt-black-2.png"
+          "/products/female-maxi-skirt-black-1.webp",
+          "/products/female-maxi-skirt-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Gray",
         colorId: "9856",
-        src: "/products/female-maxi-skirt-gray-1.png",
+        src: "/products/female-maxi-skirt-gray-1.webp",
         images: [
-          "/products/female-maxi-skirt-gray-1.png",
-          "/products/female-maxi-skirt-gray-2.png"
+          "/products/female-maxi-skirt-gray-1.webp",
+          "/products/female-maxi-skirt-gray-2.webp"
         ],
         accent: "#7a7a7e"
       },
       {
         colorName: "Brown",
         colorId: "9854",
-        src: "/products/female-maxi-skirt-brown-1.png",
+        src: "/products/female-maxi-skirt-brown-1.webp",
         images: [
-          "/products/female-maxi-skirt-brown-1.png",
-          "/products/female-maxi-skirt-brown-2.png"
+          "/products/female-maxi-skirt-brown-1.webp",
+          "/products/female-maxi-skirt-brown-2.webp"
         ],
         accent: "#5a3a28"
       }
@@ -1141,7 +1141,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 1,
     representative: {
       colorName: "Washed Black",
-      src: "/products/female-mineral-bodysuit-washed-black-1.png",
+      src: "/products/female-mineral-bodysuit-washed-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1153,10 +1153,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Washed Black",
         colorId: "9327",
-        src: "/products/female-mineral-bodysuit-washed-black-1.png",
+        src: "/products/female-mineral-bodysuit-washed-black-1.webp",
         images: [
-          "/products/female-mineral-bodysuit-washed-black-1.png",
-          "/products/female-mineral-bodysuit-washed-black-2.png"
+          "/products/female-mineral-bodysuit-washed-black-1.webp",
+          "/products/female-mineral-bodysuit-washed-black-2.webp"
         ],
         accent: "#3a3a3e"
       }
@@ -1177,7 +1177,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 2,
     representative: {
       colorName: "Black",
-      src: "/products/female-mini-skirt-black-1.png",
+      src: "/products/female-mini-skirt-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1189,20 +1189,20 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "10039",
-        src: "/products/female-mini-skirt-black-1.png",
+        src: "/products/female-mini-skirt-black-1.webp",
         images: [
-          "/products/female-mini-skirt-black-1.png",
-          "/products/female-mini-skirt-black-2.png"
+          "/products/female-mini-skirt-black-1.webp",
+          "/products/female-mini-skirt-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Light Apricot",
         colorId: "10040",
-        src: "/products/female-mini-skirt-light-apricot-1.png",
+        src: "/products/female-mini-skirt-light-apricot-1.webp",
         images: [
-          "/products/female-mini-skirt-light-apricot-1.png",
-          "/products/female-mini-skirt-light-apricot-2.png"
+          "/products/female-mini-skirt-light-apricot-1.webp",
+          "/products/female-mini-skirt-light-apricot-2.webp"
         ],
         accent: "#eac8a8"
       }
@@ -1223,7 +1223,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Black",
-      src: "/products/female-off-shoulder-crop-black-1.png",
+      src: "/products/female-off-shoulder-crop-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1235,30 +1235,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9850",
-        src: "/products/female-off-shoulder-crop-black-1.png",
+        src: "/products/female-off-shoulder-crop-black-1.webp",
         images: [
-          "/products/female-off-shoulder-crop-black-1.png",
-          "/products/female-off-shoulder-crop-black-2.png"
+          "/products/female-off-shoulder-crop-black-1.webp",
+          "/products/female-off-shoulder-crop-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Gray",
         colorId: "9852",
-        src: "/products/female-off-shoulder-crop-gray-1.png",
+        src: "/products/female-off-shoulder-crop-gray-1.webp",
         images: [
-          "/products/female-off-shoulder-crop-gray-1.png",
-          "/products/female-off-shoulder-crop-gray-2.png"
+          "/products/female-off-shoulder-crop-gray-1.webp",
+          "/products/female-off-shoulder-crop-gray-2.webp"
         ],
         accent: "#7a7a7e"
       },
       {
         colorName: "Brown",
         colorId: "9847",
-        src: "/products/female-off-shoulder-crop-brown-1.png",
+        src: "/products/female-off-shoulder-crop-brown-1.webp",
         images: [
-          "/products/female-off-shoulder-crop-brown-1.png",
-          "/products/female-off-shoulder-crop-brown-2.png"
+          "/products/female-off-shoulder-crop-brown-1.webp",
+          "/products/female-off-shoulder-crop-brown-2.webp"
         ],
         accent: "#5a3a28"
       }
@@ -1279,7 +1279,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "White",
-      src: "/products/female-one-shoulder-crop-white-1.png",
+      src: "/products/female-one-shoulder-crop-white-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1291,50 +1291,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "White",
         colorId: "8913",
-        src: "/products/female-one-shoulder-crop-white-1.png",
+        src: "/products/female-one-shoulder-crop-white-1.webp",
         images: [
-          "/products/female-one-shoulder-crop-white-1.png",
-          "/products/female-one-shoulder-crop-white-2.png"
+          "/products/female-one-shoulder-crop-white-1.webp",
+          "/products/female-one-shoulder-crop-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Light Green",
         colorId: "8908",
-        src: "/products/female-one-shoulder-crop-light-green-1.png",
+        src: "/products/female-one-shoulder-crop-light-green-1.webp",
         images: [
-          "/products/female-one-shoulder-crop-light-green-1.png",
-          "/products/female-one-shoulder-crop-light-green-2.png"
+          "/products/female-one-shoulder-crop-light-green-1.webp",
+          "/products/female-one-shoulder-crop-light-green-2.webp"
         ],
         accent: "#8ac8a0"
       },
       {
         colorName: "Apricot",
         colorId: "8909",
-        src: "/products/female-one-shoulder-crop-apricot-1.png",
+        src: "/products/female-one-shoulder-crop-apricot-1.webp",
         images: [
-          "/products/female-one-shoulder-crop-apricot-1.png",
-          "/products/female-one-shoulder-crop-apricot-2.png"
+          "/products/female-one-shoulder-crop-apricot-1.webp",
+          "/products/female-one-shoulder-crop-apricot-2.webp"
         ],
         accent: "#e8b89a"
       },
       {
         colorName: "Gray",
         colorId: "8911",
-        src: "/products/female-one-shoulder-crop-gray-1.png",
+        src: "/products/female-one-shoulder-crop-gray-1.webp",
         images: [
-          "/products/female-one-shoulder-crop-gray-1.png",
-          "/products/female-one-shoulder-crop-gray-2.png"
+          "/products/female-one-shoulder-crop-gray-1.webp",
+          "/products/female-one-shoulder-crop-gray-2.webp"
         ],
         accent: "#7a7a7e"
       },
       {
         colorName: "Black",
         colorId: "8912",
-        src: "/products/female-one-shoulder-crop-black-1.png",
+        src: "/products/female-one-shoulder-crop-black-1.webp",
         images: [
-          "/products/female-one-shoulder-crop-black-1.png",
-          "/products/female-one-shoulder-crop-black-2.png"
+          "/products/female-one-shoulder-crop-black-1.webp",
+          "/products/female-one-shoulder-crop-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -1355,7 +1355,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Black",
-      src: "/products/female-paneled-crop-black-1.png",
+      src: "/products/female-paneled-crop-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1367,40 +1367,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9829",
-        src: "/products/female-paneled-crop-black-1.png",
+        src: "/products/female-paneled-crop-black-1.webp",
         images: [
-          "/products/female-paneled-crop-black-1.png",
-          "/products/female-paneled-crop-black-2.png"
+          "/products/female-paneled-crop-black-1.webp",
+          "/products/female-paneled-crop-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9831",
-        src: "/products/female-paneled-crop-white-1.png",
+        src: "/products/female-paneled-crop-white-1.webp",
         images: [
-          "/products/female-paneled-crop-white-1.png",
-          "/products/female-paneled-crop-white-2.png"
+          "/products/female-paneled-crop-white-1.webp",
+          "/products/female-paneled-crop-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Light Gray",
         colorId: "9830",
-        src: "/products/female-paneled-crop-light-gray-1.png",
+        src: "/products/female-paneled-crop-light-gray-1.webp",
         images: [
-          "/products/female-paneled-crop-light-gray-1.png",
-          "/products/female-paneled-crop-light-gray-2.png"
+          "/products/female-paneled-crop-light-gray-1.webp",
+          "/products/female-paneled-crop-light-gray-2.webp"
         ],
         accent: "#c8c5c0"
       },
       {
         colorName: "Brown",
         colorId: "9828",
-        src: "/products/female-paneled-crop-brown-1.png",
+        src: "/products/female-paneled-crop-brown-1.webp",
         images: [
-          "/products/female-paneled-crop-brown-1.png",
-          "/products/female-paneled-crop-brown-2.png"
+          "/products/female-paneled-crop-brown-1.webp",
+          "/products/female-paneled-crop-brown-2.webp"
         ],
         accent: "#5a3a28"
       }
@@ -1423,7 +1423,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "White",
-      src: "/products/female-pleated-skirt-white-1.png",
+      src: "/products/female-pleated-skirt-white-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1435,40 +1435,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "White",
         colorId: "10158",
-        src: "/products/female-pleated-skirt-white-1.png",
+        src: "/products/female-pleated-skirt-white-1.webp",
         images: [
-          "/products/female-pleated-skirt-white-1.png",
-          "/products/female-pleated-skirt-white-2.png"
+          "/products/female-pleated-skirt-white-1.webp",
+          "/products/female-pleated-skirt-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Light Green",
         colorId: "10162",
-        src: "/products/female-pleated-skirt-light-green-1.png",
+        src: "/products/female-pleated-skirt-light-green-1.webp",
         images: [
-          "/products/female-pleated-skirt-light-green-1.png",
-          "/products/female-pleated-skirt-light-green-2.png"
+          "/products/female-pleated-skirt-light-green-1.webp",
+          "/products/female-pleated-skirt-light-green-2.webp"
         ],
         accent: "#8ac8a0"
       },
       {
         colorName: "Blackish Green",
         colorId: "10160",
-        src: "/products/female-pleated-skirt-blackish-green-1.png",
+        src: "/products/female-pleated-skirt-blackish-green-1.webp",
         images: [
-          "/products/female-pleated-skirt-blackish-green-1.png",
-          "/products/female-pleated-skirt-blackish-green-2.png"
+          "/products/female-pleated-skirt-blackish-green-1.webp",
+          "/products/female-pleated-skirt-blackish-green-2.webp"
         ],
         accent: "#2a3a2a"
       },
       {
         colorName: "Navy Blue",
         colorId: "10159",
-        src: "/products/female-pleated-skirt-navy-blue-1.png",
+        src: "/products/female-pleated-skirt-navy-blue-1.webp",
         images: [
-          "/products/female-pleated-skirt-navy-blue-1.png",
-          "/products/female-pleated-skirt-navy-blue-2.png"
+          "/products/female-pleated-skirt-navy-blue-1.webp",
+          "/products/female-pleated-skirt-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       }
@@ -1489,7 +1489,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Light Green",
-      src: "/products/female-quarter-zip-pullover-light-green-1.png",
+      src: "/products/female-quarter-zip-pullover-light-green-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1501,40 +1501,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9444",
-        src: "/products/female-quarter-zip-pullover-black-1.png",
+        src: "/products/female-quarter-zip-pullover-black-1.webp",
         images: [
-          "/products/female-quarter-zip-pullover-black-1.png",
-          "/products/female-quarter-zip-pullover-black-2.png"
+          "/products/female-quarter-zip-pullover-black-1.webp",
+          "/products/female-quarter-zip-pullover-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "9442",
-        src: "/products/female-quarter-zip-pullover-white-1.png",
+        src: "/products/female-quarter-zip-pullover-white-1.webp",
         images: [
-          "/products/female-quarter-zip-pullover-white-1.png",
-          "/products/female-quarter-zip-pullover-white-2.png"
+          "/products/female-quarter-zip-pullover-white-1.webp",
+          "/products/female-quarter-zip-pullover-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Light Purple",
         colorId: "9447",
-        src: "/products/female-quarter-zip-pullover-light-purple-1.png",
+        src: "/products/female-quarter-zip-pullover-light-purple-1.webp",
         images: [
-          "/products/female-quarter-zip-pullover-light-purple-1.png",
-          "/products/female-quarter-zip-pullover-light-purple-2.png"
+          "/products/female-quarter-zip-pullover-light-purple-1.webp",
+          "/products/female-quarter-zip-pullover-light-purple-2.webp"
         ],
         accent: "#c8b0e0"
       },
       {
         colorName: "Light Green",
         colorId: "9448",
-        src: "/products/female-quarter-zip-pullover-light-green-1.png",
+        src: "/products/female-quarter-zip-pullover-light-green-1.webp",
         images: [
-          "/products/female-quarter-zip-pullover-light-green-1.png",
-          "/products/female-quarter-zip-pullover-light-green-2.png"
+          "/products/female-quarter-zip-pullover-light-green-1.webp",
+          "/products/female-quarter-zip-pullover-light-green-2.webp"
         ],
         accent: "#8ac8a0"
       }
@@ -1555,7 +1555,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Flower Gray with Dark Gray",
-      src: "/products/female-raglan-tee-flower-gray-with-dark-gray-1.png",
+      src: "/products/female-raglan-tee-flower-gray-with-dark-gray-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1567,40 +1567,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black with White",
         colorId: "7984",
-        src: "/products/female-raglan-tee-black-with-white-1.png",
+        src: "/products/female-raglan-tee-black-with-white-1.webp",
         images: [
-          "/products/female-raglan-tee-black-with-white-1.png",
-          "/products/female-raglan-tee-black-with-white-2.png"
+          "/products/female-raglan-tee-black-with-white-1.webp",
+          "/products/female-raglan-tee-black-with-white-2.webp"
         ],
         accent: "#3a3a3e"
       },
       {
         colorName: "Flower Gray with Dark Gray",
         colorId: "7983",
-        src: "/products/female-raglan-tee-flower-gray-with-dark-gray-1.png",
+        src: "/products/female-raglan-tee-flower-gray-with-dark-gray-1.webp",
         images: [
-          "/products/female-raglan-tee-flower-gray-with-dark-gray-1.png",
-          "/products/female-raglan-tee-flower-gray-with-dark-gray-2.png"
+          "/products/female-raglan-tee-flower-gray-with-dark-gray-1.webp",
+          "/products/female-raglan-tee-flower-gray-with-dark-gray-2.webp"
         ],
         accent: "#9a9892"
       },
       {
         colorName: "Yellow with Brown",
         colorId: "7986",
-        src: "/products/female-raglan-tee-yellow-with-brown-1.png",
+        src: "/products/female-raglan-tee-yellow-with-brown-1.webp",
         images: [
-          "/products/female-raglan-tee-yellow-with-brown-1.png",
-          "/products/female-raglan-tee-yellow-with-brown-2.png"
+          "/products/female-raglan-tee-yellow-with-brown-1.webp",
+          "/products/female-raglan-tee-yellow-with-brown-2.webp"
         ],
         accent: "#a8905a"
       },
       {
         colorName: "Coffee with Blue",
         colorId: "7985",
-        src: "/products/female-raglan-tee-coffee-with-blue-1.png",
+        src: "/products/female-raglan-tee-coffee-with-blue-1.webp",
         images: [
-          "/products/female-raglan-tee-coffee-with-blue-1.png",
-          "/products/female-raglan-tee-coffee-with-blue-2.png"
+          "/products/female-raglan-tee-coffee-with-blue-1.webp",
+          "/products/female-raglan-tee-coffee-with-blue-2.webp"
         ],
         accent: "#5a5a7a"
       }
@@ -1621,7 +1621,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Dark Gray",
-      src: "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-1.png",
+      src: "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1633,40 +1633,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8824",
-        src: "/products/female-slim-fit-ribbed-racerback-tank-top-black-1.png",
+        src: "/products/female-slim-fit-ribbed-racerback-tank-top-black-1.webp",
         images: [
-          "/products/female-slim-fit-ribbed-racerback-tank-top-black-1.png",
-          "/products/female-slim-fit-ribbed-racerback-tank-top-black-2.png"
+          "/products/female-slim-fit-ribbed-racerback-tank-top-black-1.webp",
+          "/products/female-slim-fit-ribbed-racerback-tank-top-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "8825",
-        src: "/products/female-slim-fit-ribbed-racerback-tank-top-white-1.png",
+        src: "/products/female-slim-fit-ribbed-racerback-tank-top-white-1.webp",
         images: [
-          "/products/female-slim-fit-ribbed-racerback-tank-top-white-1.png",
-          "/products/female-slim-fit-ribbed-racerback-tank-top-white-2.png"
+          "/products/female-slim-fit-ribbed-racerback-tank-top-white-1.webp",
+          "/products/female-slim-fit-ribbed-racerback-tank-top-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Apricot",
         colorId: "8826",
-        src: "/products/female-slim-fit-ribbed-racerback-tank-top-apricot-1.png",
+        src: "/products/female-slim-fit-ribbed-racerback-tank-top-apricot-1.webp",
         images: [
-          "/products/female-slim-fit-ribbed-racerback-tank-top-apricot-1.png",
-          "/products/female-slim-fit-ribbed-racerback-tank-top-apricot-2.png"
+          "/products/female-slim-fit-ribbed-racerback-tank-top-apricot-1.webp",
+          "/products/female-slim-fit-ribbed-racerback-tank-top-apricot-2.webp"
         ],
         accent: "#e8b89a"
       },
       {
         colorName: "Dark Gray",
         colorId: "8827",
-        src: "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-1.png",
+        src: "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-1.webp",
         images: [
-          "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-1.png",
-          "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-2.png"
+          "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-1.webp",
+          "/products/female-slim-fit-ribbed-racerback-tank-top-dark-gray-2.webp"
         ],
         accent: "#4a4a4e"
       }
@@ -1687,7 +1687,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 2,
     representative: {
       colorName: "Black",
-      src: "/products/female-stripe-hoodie-black-1.png",
+      src: "/products/female-stripe-hoodie-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1699,20 +1699,20 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8428",
-        src: "/products/female-stripe-hoodie-black-1.png",
+        src: "/products/female-stripe-hoodie-black-1.webp",
         images: [
-          "/products/female-stripe-hoodie-black-1.png",
-          "/products/female-stripe-hoodie-black-2.png"
+          "/products/female-stripe-hoodie-black-1.webp",
+          "/products/female-stripe-hoodie-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Navy Blue",
         colorId: "8430",
-        src: "/products/female-stripe-hoodie-navy-blue-1.png",
+        src: "/products/female-stripe-hoodie-navy-blue-1.webp",
         images: [
-          "/products/female-stripe-hoodie-navy-blue-1.png",
-          "/products/female-stripe-hoodie-navy-blue-2.png"
+          "/products/female-stripe-hoodie-navy-blue-1.webp",
+          "/products/female-stripe-hoodie-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       }
@@ -1733,7 +1733,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Plum Purple",
-      src: "/products/female-track-jacket-plum-purple-1.png",
+      src: "/products/female-track-jacket-plum-purple-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1745,30 +1745,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8547",
-        src: "/products/female-track-jacket-black-1.png",
+        src: "/products/female-track-jacket-black-1.webp",
         images: [
-          "/products/female-track-jacket-black-1.png",
-          "/products/female-track-jacket-black-2.png"
+          "/products/female-track-jacket-black-1.webp",
+          "/products/female-track-jacket-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Plum Purple",
         colorId: "8555",
-        src: "/products/female-track-jacket-plum-purple-1.png",
+        src: "/products/female-track-jacket-plum-purple-1.webp",
         images: [
-          "/products/female-track-jacket-plum-purple-1.png",
-          "/products/female-track-jacket-plum-purple-2.png"
+          "/products/female-track-jacket-plum-purple-1.webp",
+          "/products/female-track-jacket-plum-purple-2.webp"
         ],
         accent: "#7a3a5a"
       },
       {
         colorName: "Red",
         colorId: "8553",
-        src: "/products/female-track-jacket-red-1.png",
+        src: "/products/female-track-jacket-red-1.webp",
         images: [
-          "/products/female-track-jacket-red-1.png",
-          "/products/female-track-jacket-red-2.png"
+          "/products/female-track-jacket-red-1.webp",
+          "/products/female-track-jacket-red-2.webp"
         ],
         accent: "#c8424a"
       }
@@ -1790,7 +1790,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 2,
     representative: {
       colorName: "Black",
-      src: "/products/female-track-shorts-black-1.png",
+      src: "/products/female-track-shorts-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1802,20 +1802,20 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9210",
-        src: "/products/female-track-shorts-black-1.png",
+        src: "/products/female-track-shorts-black-1.webp",
         images: [
-          "/products/female-track-shorts-black-1.png",
-          "/products/female-track-shorts-black-2.png"
+          "/products/female-track-shorts-black-1.webp",
+          "/products/female-track-shorts-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Navy Blue",
         colorId: "9212",
-        src: "/products/female-track-shorts-navy-blue-1.png",
+        src: "/products/female-track-shorts-navy-blue-1.webp",
         images: [
-          "/products/female-track-shorts-navy-blue-1.png",
-          "/products/female-track-shorts-navy-blue-2.png"
+          "/products/female-track-shorts-navy-blue-1.webp",
+          "/products/female-track-shorts-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       }
@@ -1836,7 +1836,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Black",
-      src: "/products/female-yoga-halter-bra-black-1.png",
+      src: "/products/female-yoga-halter-bra-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1848,40 +1848,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "10292",
-        src: "/products/female-yoga-halter-bra-black-1.png",
+        src: "/products/female-yoga-halter-bra-black-1.webp",
         images: [
-          "/products/female-yoga-halter-bra-black-1.png",
-          "/products/female-yoga-halter-bra-black-2.png"
+          "/products/female-yoga-halter-bra-black-1.webp",
+          "/products/female-yoga-halter-bra-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Light Apricot",
         colorId: "10293",
-        src: "/products/female-yoga-halter-bra-light-apricot-1.png",
+        src: "/products/female-yoga-halter-bra-light-apricot-1.webp",
         images: [
-          "/products/female-yoga-halter-bra-light-apricot-1.png",
-          "/products/female-yoga-halter-bra-light-apricot-2.png"
+          "/products/female-yoga-halter-bra-light-apricot-1.webp",
+          "/products/female-yoga-halter-bra-light-apricot-2.webp"
         ],
         accent: "#eac8a8"
       },
       {
         colorName: "Wine Red",
         colorId: "10294",
-        src: "/products/female-yoga-halter-bra-wine-red-1.png",
+        src: "/products/female-yoga-halter-bra-wine-red-1.webp",
         images: [
-          "/products/female-yoga-halter-bra-wine-red-1.png",
-          "/products/female-yoga-halter-bra-wine-red-2.png"
+          "/products/female-yoga-halter-bra-wine-red-1.webp",
+          "/products/female-yoga-halter-bra-wine-red-2.webp"
         ],
         accent: "#7a2a3a"
       },
       {
         colorName: "Navy Blue",
         colorId: "10295",
-        src: "/products/female-yoga-halter-bra-navy-blue-1.png",
+        src: "/products/female-yoga-halter-bra-navy-blue-1.webp",
         images: [
-          "/products/female-yoga-halter-bra-navy-blue-1.png",
-          "/products/female-yoga-halter-bra-navy-blue-2.png"
+          "/products/female-yoga-halter-bra-navy-blue-1.webp",
+          "/products/female-yoga-halter-bra-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       }
@@ -1903,7 +1903,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Pirate Gray",
-      src: "/products/male-acid-wash-long-sleeve-pirate-gray-1.png",
+      src: "/products/male-acid-wash-long-sleeve-pirate-gray-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1915,40 +1915,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black Beauty",
         colorId: "6457",
-        src: "/products/male-acid-wash-long-sleeve-black-beauty-1.png",
+        src: "/products/male-acid-wash-long-sleeve-black-beauty-1.webp",
         images: [
-          "/products/male-acid-wash-long-sleeve-black-beauty-1.png",
-          "/products/male-acid-wash-long-sleeve-black-beauty-2.png"
+          "/products/male-acid-wash-long-sleeve-black-beauty-1.webp",
+          "/products/male-acid-wash-long-sleeve-black-beauty-2.webp"
         ],
         accent: "#1a1a2a"
       },
       {
         colorName: "Sky Blue",
         colorId: "8379",
-        src: "/products/male-acid-wash-long-sleeve-sky-blue-1.png",
+        src: "/products/male-acid-wash-long-sleeve-sky-blue-1.webp",
         images: [
-          "/products/male-acid-wash-long-sleeve-sky-blue-1.png",
-          "/products/male-acid-wash-long-sleeve-sky-blue-2.png"
+          "/products/male-acid-wash-long-sleeve-sky-blue-1.webp",
+          "/products/male-acid-wash-long-sleeve-sky-blue-2.webp"
         ],
         accent: "#8ac4d8"
       },
       {
         colorName: "Dark Blue",
         colorId: "6456",
-        src: "/products/male-acid-wash-long-sleeve-dark-blue-1.png",
+        src: "/products/male-acid-wash-long-sleeve-dark-blue-1.webp",
         images: [
-          "/products/male-acid-wash-long-sleeve-dark-blue-1.png",
-          "/products/male-acid-wash-long-sleeve-dark-blue-2.png"
+          "/products/male-acid-wash-long-sleeve-dark-blue-1.webp",
+          "/products/male-acid-wash-long-sleeve-dark-blue-2.webp"
         ],
         accent: "#2a3a5e"
       },
       {
         colorName: "Pirate Gray",
         colorId: "6455",
-        src: "/products/male-acid-wash-long-sleeve-pirate-gray-1.png",
+        src: "/products/male-acid-wash-long-sleeve-pirate-gray-1.webp",
         images: [
-          "/products/male-acid-wash-long-sleeve-pirate-gray-1.png",
-          "/products/male-acid-wash-long-sleeve-pirate-gray-2.png"
+          "/products/male-acid-wash-long-sleeve-pirate-gray-1.webp",
+          "/products/male-acid-wash-long-sleeve-pirate-gray-2.webp"
         ],
         accent: "#5a5a5e"
       }
@@ -1970,7 +1970,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 2,
     representative: {
       colorName: "Black",
-      src: "/products/male-boxy-tank-black-1.png",
+      src: "/products/male-boxy-tank-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -1982,20 +1982,20 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "7190",
-        src: "/products/male-boxy-tank-black-1.png",
+        src: "/products/male-boxy-tank-black-1.webp",
         images: [
-          "/products/male-boxy-tank-black-1.png",
-          "/products/male-boxy-tank-black-2.png"
+          "/products/male-boxy-tank-black-1.webp",
+          "/products/male-boxy-tank-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Gray",
         colorId: "7191",
-        src: "/products/male-boxy-tank-gray-1.png",
+        src: "/products/male-boxy-tank-gray-1.webp",
         images: [
-          "/products/male-boxy-tank-gray-1.png",
-          "/products/male-boxy-tank-gray-2.png"
+          "/products/male-boxy-tank-gray-1.webp",
+          "/products/male-boxy-tank-gray-2.webp"
         ],
         accent: "#7a7a7e"
       }
@@ -2017,7 +2017,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "White",
-      src: "/products/male-cotton-tank-white-1.png",
+      src: "/products/male-cotton-tank-white-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2029,30 +2029,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "6294",
-        src: "/products/male-cotton-tank-black-1.png",
+        src: "/products/male-cotton-tank-black-1.webp",
         images: [
-          "/products/male-cotton-tank-black-1.png",
-          "/products/male-cotton-tank-black-2.png"
+          "/products/male-cotton-tank-black-1.webp",
+          "/products/male-cotton-tank-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "White",
         colorId: "6726",
-        src: "/products/male-cotton-tank-white-1.png",
+        src: "/products/male-cotton-tank-white-1.webp",
         images: [
-          "/products/male-cotton-tank-white-1.png",
-          "/products/male-cotton-tank-white-2.png"
+          "/products/male-cotton-tank-white-1.webp",
+          "/products/male-cotton-tank-white-2.webp"
         ],
         accent: "#e8e8e8"
       },
       {
         colorName: "Medium Grey",
         colorId: "6725",
-        src: "/products/male-cotton-tank-medium-grey-1.png",
+        src: "/products/male-cotton-tank-medium-grey-1.webp",
         images: [
-          "/products/male-cotton-tank-medium-grey-1.png",
-          "/products/male-cotton-tank-medium-grey-2.png"
+          "/products/male-cotton-tank-medium-grey-1.webp",
+          "/products/male-cotton-tank-medium-grey-2.webp"
         ],
         accent: "#9a9a9e"
       }
@@ -2073,7 +2073,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Charcoal Gray",
-      src: "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-1.png",
+      src: "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2085,30 +2085,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "7890",
-        src: "/products/male-essential-drawstring-straight-leg-sweatpants-black-1.png",
+        src: "/products/male-essential-drawstring-straight-leg-sweatpants-black-1.webp",
         images: [
-          "/products/male-essential-drawstring-straight-leg-sweatpants-black-1.png",
-          "/products/male-essential-drawstring-straight-leg-sweatpants-black-2.png"
+          "/products/male-essential-drawstring-straight-leg-sweatpants-black-1.webp",
+          "/products/male-essential-drawstring-straight-leg-sweatpants-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Charcoal Gray",
         colorId: "7889",
-        src: "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-1.png",
+        src: "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-1.webp",
         images: [
-          "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-1.png",
-          "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-2.png"
+          "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-1.webp",
+          "/products/male-essential-drawstring-straight-leg-sweatpants-charcoal-gray-2.webp"
         ],
         accent: "#3a3a3e"
       },
       {
         colorName: "Dark Reddish Purple",
         colorId: "7888",
-        src: "/products/male-essential-drawstring-straight-leg-sweatpants-dark-reddish-purple-1.png",
+        src: "/products/male-essential-drawstring-straight-leg-sweatpants-dark-reddish-purple-1.webp",
         images: [
-          "/products/male-essential-drawstring-straight-leg-sweatpants-dark-reddish-purple-1.png",
-          "/products/male-essential-drawstring-straight-leg-sweatpants-dark-reddish-purple-2.png"
+          "/products/male-essential-drawstring-straight-leg-sweatpants-dark-reddish-purple-1.webp",
+          "/products/male-essential-drawstring-straight-leg-sweatpants-dark-reddish-purple-2.webp"
         ],
         accent: "#5a2a3a"
       }
@@ -2130,7 +2130,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Black",
-      src: "/products/male-fleece-joggers-black-1.png",
+      src: "/products/male-fleece-joggers-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2142,40 +2142,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Mild Apricot",
         colorId: "8596",
-        src: "/products/male-fleece-joggers-mild-apricot-1.png",
+        src: "/products/male-fleece-joggers-mild-apricot-1.webp",
         images: [
-          "/products/male-fleece-joggers-mild-apricot-1.png",
-          "/products/male-fleece-joggers-mild-apricot-2.png"
+          "/products/male-fleece-joggers-mild-apricot-1.webp",
+          "/products/male-fleece-joggers-mild-apricot-2.webp"
         ],
         accent: "#e8c0a8"
       },
       {
         colorName: "Light Gray",
         colorId: "8595",
-        src: "/products/male-fleece-joggers-light-gray-1.png",
+        src: "/products/male-fleece-joggers-light-gray-1.webp",
         images: [
-          "/products/male-fleece-joggers-light-gray-1.png",
-          "/products/male-fleece-joggers-light-gray-2.png"
+          "/products/male-fleece-joggers-light-gray-1.webp",
+          "/products/male-fleece-joggers-light-gray-2.webp"
         ],
         accent: "#c8c5c0"
       },
       {
         colorName: "Royal Blue",
         colorId: "8594",
-        src: "/products/male-fleece-joggers-royal-blue-1.png",
+        src: "/products/male-fleece-joggers-royal-blue-1.webp",
         images: [
-          "/products/male-fleece-joggers-royal-blue-1.png",
-          "/products/male-fleece-joggers-royal-blue-2.png"
+          "/products/male-fleece-joggers-royal-blue-1.webp",
+          "/products/male-fleece-joggers-royal-blue-2.webp"
         ],
         accent: "#3a5fb8"
       },
       {
         colorName: "Black",
         colorId: "7036",
-        src: "/products/male-fleece-joggers-black-1.png",
+        src: "/products/male-fleece-joggers-black-1.webp",
         images: [
-          "/products/male-fleece-joggers-black-1.png",
-          "/products/male-fleece-joggers-black-2.png"
+          "/products/male-fleece-joggers-black-1.webp",
+          "/products/male-fleece-joggers-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -2197,7 +2197,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 1,
     representative: {
       colorName: "Dusk Black",
-      src: "/products/male-frayed-edge-tee-dusk-black-1.png",
+      src: "/products/male-frayed-edge-tee-dusk-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2209,10 +2209,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Dusk Black",
         colorId: "6900",
-        src: "/products/male-frayed-edge-tee-dusk-black-1.png",
+        src: "/products/male-frayed-edge-tee-dusk-black-1.webp",
         images: [
-          "/products/male-frayed-edge-tee-dusk-black-1.png",
-          "/products/male-frayed-edge-tee-dusk-black-2.png"
+          "/products/male-frayed-edge-tee-dusk-black-1.webp",
+          "/products/male-frayed-edge-tee-dusk-black-2.webp"
         ],
         accent: "#2a2a2e"
       }
@@ -2234,7 +2234,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Black",
-      src: "/products/male-frayed-hoodie-black-1.png",
+      src: "/products/male-frayed-hoodie-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2246,50 +2246,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Medium Gray",
         colorId: "8521",
-        src: "/products/male-frayed-hoodie-medium-gray-1.png",
+        src: "/products/male-frayed-hoodie-medium-gray-1.webp",
         images: [
-          "/products/male-frayed-hoodie-medium-gray-1.png",
-          "/products/male-frayed-hoodie-medium-gray-2.png"
+          "/products/male-frayed-hoodie-medium-gray-1.webp",
+          "/products/male-frayed-hoodie-medium-gray-2.webp"
         ],
         accent: "#9a9a9e"
       },
       {
         colorName: "Retro Green",
         colorId: "8518",
-        src: "/products/male-frayed-hoodie-retro-green-1.png",
+        src: "/products/male-frayed-hoodie-retro-green-1.webp",
         images: [
-          "/products/male-frayed-hoodie-retro-green-1.png",
-          "/products/male-frayed-hoodie-retro-green-2.png"
+          "/products/male-frayed-hoodie-retro-green-1.webp",
+          "/products/male-frayed-hoodie-retro-green-2.webp"
         ],
         accent: "#5a7a4a"
       },
       {
         colorName: "Navy Blue",
         colorId: "8519",
-        src: "/products/male-frayed-hoodie-navy-blue-1.png",
+        src: "/products/male-frayed-hoodie-navy-blue-1.webp",
         images: [
-          "/products/male-frayed-hoodie-navy-blue-1.png",
-          "/products/male-frayed-hoodie-navy-blue-2.png"
+          "/products/male-frayed-hoodie-navy-blue-1.webp",
+          "/products/male-frayed-hoodie-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       },
       {
         colorName: "Brown",
         colorId: "8520",
-        src: "/products/male-frayed-hoodie-brown-1.png",
+        src: "/products/male-frayed-hoodie-brown-1.webp",
         images: [
-          "/products/male-frayed-hoodie-brown-1.png",
-          "/products/male-frayed-hoodie-brown-2.png"
+          "/products/male-frayed-hoodie-brown-1.webp",
+          "/products/male-frayed-hoodie-brown-2.webp"
         ],
         accent: "#5a3a28"
       },
       {
         colorName: "Black",
         colorId: "6673",
-        src: "/products/male-frayed-hoodie-black-1.png",
+        src: "/products/male-frayed-hoodie-black-1.webp",
         images: [
-          "/products/male-frayed-hoodie-black-1.png",
-          "/products/male-frayed-hoodie-black-2.png"
+          "/products/male-frayed-hoodie-black-1.webp",
+          "/products/male-frayed-hoodie-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -2311,7 +2311,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 3,
     representative: {
       colorName: "Jeans Blue",
-      src: "/products/male-gradient-long-sleeve-jeans-blue-1.png",
+      src: "/products/male-gradient-long-sleeve-jeans-blue-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2323,30 +2323,30 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Gray Blue",
         colorId: "7111",
-        src: "/products/male-gradient-long-sleeve-gray-blue-1.png",
+        src: "/products/male-gradient-long-sleeve-gray-blue-1.webp",
         images: [
-          "/products/male-gradient-long-sleeve-gray-blue-1.png",
-          "/products/male-gradient-long-sleeve-gray-blue-2.png"
+          "/products/male-gradient-long-sleeve-gray-blue-1.webp",
+          "/products/male-gradient-long-sleeve-gray-blue-2.webp"
         ],
         accent: "#7a8aa0"
       },
       {
         colorName: "Jeans Blue",
         colorId: "7102",
-        src: "/products/male-gradient-long-sleeve-jeans-blue-1.png",
+        src: "/products/male-gradient-long-sleeve-jeans-blue-1.webp",
         images: [
-          "/products/male-gradient-long-sleeve-jeans-blue-1.png",
-          "/products/male-gradient-long-sleeve-jeans-blue-2.png"
+          "/products/male-gradient-long-sleeve-jeans-blue-1.webp",
+          "/products/male-gradient-long-sleeve-jeans-blue-2.webp"
         ],
         accent: "#4a6a9a"
       },
       {
         colorName: "Black",
         colorId: "6964",
-        src: "/products/male-gradient-long-sleeve-black-1.png",
+        src: "/products/male-gradient-long-sleeve-black-1.webp",
         images: [
-          "/products/male-gradient-long-sleeve-black-1.png",
-          "/products/male-gradient-long-sleeve-black-2.png"
+          "/products/male-gradient-long-sleeve-black-1.webp",
+          "/products/male-gradient-long-sleeve-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -2368,7 +2368,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Khaki",
-      src: "/products/male-heavyweight-tank-khaki-1.png",
+      src: "/products/male-heavyweight-tank-khaki-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2380,50 +2380,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Khaki",
         colorId: "9100",
-        src: "/products/male-heavyweight-tank-khaki-1.png",
+        src: "/products/male-heavyweight-tank-khaki-1.webp",
         images: [
-          "/products/male-heavyweight-tank-khaki-1.png",
-          "/products/male-heavyweight-tank-khaki-2.png"
+          "/products/male-heavyweight-tank-khaki-1.webp",
+          "/products/male-heavyweight-tank-khaki-2.webp"
         ],
         accent: "#b8a07e"
       },
       {
         colorName: "Army Green",
         colorId: "9104",
-        src: "/products/male-heavyweight-tank-army-green-1.png",
+        src: "/products/male-heavyweight-tank-army-green-1.webp",
         images: [
-          "/products/male-heavyweight-tank-army-green-1.png",
-          "/products/male-heavyweight-tank-army-green-2.png"
+          "/products/male-heavyweight-tank-army-green-1.webp",
+          "/products/male-heavyweight-tank-army-green-2.webp"
         ],
         accent: "#4a5a3a"
       },
       {
         colorName: "Dark Gray",
         colorId: "9106",
-        src: "/products/male-heavyweight-tank-dark-gray-1.png",
+        src: "/products/male-heavyweight-tank-dark-gray-1.webp",
         images: [
-          "/products/male-heavyweight-tank-dark-gray-1.png",
-          "/products/male-heavyweight-tank-dark-gray-2.png"
+          "/products/male-heavyweight-tank-dark-gray-1.webp",
+          "/products/male-heavyweight-tank-dark-gray-2.webp"
         ],
         accent: "#4a4a4e"
       },
       {
         colorName: "Royal Blue",
         colorId: "9102",
-        src: "/products/male-heavyweight-tank-royal-blue-1.png",
+        src: "/products/male-heavyweight-tank-royal-blue-1.webp",
         images: [
-          "/products/male-heavyweight-tank-royal-blue-1.png",
-          "/products/male-heavyweight-tank-royal-blue-2.png"
+          "/products/male-heavyweight-tank-royal-blue-1.webp",
+          "/products/male-heavyweight-tank-royal-blue-2.webp"
         ],
         accent: "#3a5fb8"
       },
       {
         colorName: "Black",
         colorId: "9099",
-        src: "/products/male-heavyweight-tank-black-1.png",
+        src: "/products/male-heavyweight-tank-black-1.webp",
         images: [
-          "/products/male-heavyweight-tank-black-1.png",
-          "/products/male-heavyweight-tank-black-2.png"
+          "/products/male-heavyweight-tank-black-1.webp",
+          "/products/male-heavyweight-tank-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -2446,7 +2446,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 4,
     representative: {
       colorName: "Black",
-      src: "/products/male-mesh-shorts-black-1.png",
+      src: "/products/male-mesh-shorts-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2458,40 +2458,40 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8671",
-        src: "/products/male-mesh-shorts-black-1.png",
+        src: "/products/male-mesh-shorts-black-1.webp",
         images: [
-          "/products/male-mesh-shorts-black-1.png",
-          "/products/male-mesh-shorts-black-2.png"
+          "/products/male-mesh-shorts-black-1.webp",
+          "/products/male-mesh-shorts-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Sky Blue",
         colorId: "8741",
-        src: "/products/male-mesh-shorts-sky-blue-1.png",
+        src: "/products/male-mesh-shorts-sky-blue-1.webp",
         images: [
-          "/products/male-mesh-shorts-sky-blue-1.png",
-          "/products/male-mesh-shorts-sky-blue-2.png"
+          "/products/male-mesh-shorts-sky-blue-1.webp",
+          "/products/male-mesh-shorts-sky-blue-2.webp"
         ],
         accent: "#8ac4d8"
       },
       {
         colorName: "Gray",
         colorId: "8673",
-        src: "/products/male-mesh-shorts-gray-1.png",
+        src: "/products/male-mesh-shorts-gray-1.webp",
         images: [
-          "/products/male-mesh-shorts-gray-1.png",
-          "/products/male-mesh-shorts-gray-2.png"
+          "/products/male-mesh-shorts-gray-1.webp",
+          "/products/male-mesh-shorts-gray-2.webp"
         ],
         accent: "#7a7a7e"
       },
       {
         colorName: "Navy Blue",
         colorId: "8676",
-        src: "/products/male-mesh-shorts-navy-blue-1.png",
+        src: "/products/male-mesh-shorts-navy-blue-1.webp",
         images: [
-          "/products/male-mesh-shorts-navy-blue-1.png",
-          "/products/male-mesh-shorts-navy-blue-2.png"
+          "/products/male-mesh-shorts-navy-blue-1.webp",
+          "/products/male-mesh-shorts-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       }
@@ -2513,7 +2513,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 1,
     representative: {
       colorName: "Static Blue",
-      src: "/products/male-quarter-zip-tee-static-blue-1.png",
+      src: "/products/male-quarter-zip-tee-static-blue-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2525,10 +2525,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Static Blue",
         colorId: "9877",
-        src: "/products/male-quarter-zip-tee-static-blue-1.png",
+        src: "/products/male-quarter-zip-tee-static-blue-1.webp",
         images: [
-          "/products/male-quarter-zip-tee-static-blue-1.png",
-          "/products/male-quarter-zip-tee-static-blue-2.png"
+          "/products/male-quarter-zip-tee-static-blue-1.webp",
+          "/products/male-quarter-zip-tee-static-blue-2.webp"
         ],
         accent: "#4a5a7a"
       }
@@ -2550,7 +2550,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Black",
-      src: "/products/male-snow-wash-hoodie-black-1.png",
+      src: "/products/male-snow-wash-hoodie-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2562,50 +2562,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8362",
-        src: "/products/male-snow-wash-hoodie-black-1.png",
+        src: "/products/male-snow-wash-hoodie-black-1.webp",
         images: [
-          "/products/male-snow-wash-hoodie-black-1.png",
-          "/products/male-snow-wash-hoodie-black-2.png"
+          "/products/male-snow-wash-hoodie-black-1.webp",
+          "/products/male-snow-wash-hoodie-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Mild Apricot",
         colorId: "8365",
-        src: "/products/male-snow-wash-hoodie-mild-apricot-1.png",
+        src: "/products/male-snow-wash-hoodie-mild-apricot-1.webp",
         images: [
-          "/products/male-snow-wash-hoodie-mild-apricot-1.png",
-          "/products/male-snow-wash-hoodie-mild-apricot-2.png"
+          "/products/male-snow-wash-hoodie-mild-apricot-1.webp",
+          "/products/male-snow-wash-hoodie-mild-apricot-2.webp"
         ],
         accent: "#e8c0a8"
       },
       {
         colorName: "Light Gray",
         colorId: "8366",
-        src: "/products/male-snow-wash-hoodie-light-gray-1.png",
+        src: "/products/male-snow-wash-hoodie-light-gray-1.webp",
         images: [
-          "/products/male-snow-wash-hoodie-light-gray-1.png",
-          "/products/male-snow-wash-hoodie-light-gray-2.png"
+          "/products/male-snow-wash-hoodie-light-gray-1.webp",
+          "/products/male-snow-wash-hoodie-light-gray-2.webp"
         ],
         accent: "#c8c5c0"
       },
       {
         colorName: "Lake blue",
         colorId: "8363",
-        src: "/products/male-snow-wash-hoodie-lake-blue-1.png",
+        src: "/products/male-snow-wash-hoodie-lake-blue-1.webp",
         images: [
-          "/products/male-snow-wash-hoodie-lake-blue-1.png",
-          "/products/male-snow-wash-hoodie-lake-blue-2.png"
+          "/products/male-snow-wash-hoodie-lake-blue-1.webp",
+          "/products/male-snow-wash-hoodie-lake-blue-2.webp"
         ],
         accent: "#5a8ac0"
       },
       {
         colorName: "Royal Blue",
         colorId: "8380",
-        src: "/products/male-snow-wash-hoodie-royal-blue-1.png",
+        src: "/products/male-snow-wash-hoodie-royal-blue-1.webp",
         images: [
-          "/products/male-snow-wash-hoodie-royal-blue-1.png",
-          "/products/male-snow-wash-hoodie-royal-blue-2.png"
+          "/products/male-snow-wash-hoodie-royal-blue-1.webp",
+          "/products/male-snow-wash-hoodie-royal-blue-2.webp"
         ],
         accent: "#3a5fb8"
       }
@@ -2627,7 +2627,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Brown",
-      src: "/products/male-snow-wash-sweatpants-brown-1.png",
+      src: "/products/male-snow-wash-sweatpants-brown-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2639,50 +2639,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Brown",
         colorId: "8220",
-        src: "/products/male-snow-wash-sweatpants-brown-1.png",
+        src: "/products/male-snow-wash-sweatpants-brown-1.webp",
         images: [
-          "/products/male-snow-wash-sweatpants-brown-1.png",
-          "/products/male-snow-wash-sweatpants-brown-2.png"
+          "/products/male-snow-wash-sweatpants-brown-1.webp",
+          "/products/male-snow-wash-sweatpants-brown-2.webp"
         ],
         accent: "#5a3a28"
       },
       {
         colorName: "Dark Blue",
         colorId: "8222",
-        src: "/products/male-snow-wash-sweatpants-dark-blue-1.png",
+        src: "/products/male-snow-wash-sweatpants-dark-blue-1.webp",
         images: [
-          "/products/male-snow-wash-sweatpants-dark-blue-1.png",
-          "/products/male-snow-wash-sweatpants-dark-blue-2.png"
+          "/products/male-snow-wash-sweatpants-dark-blue-1.webp",
+          "/products/male-snow-wash-sweatpants-dark-blue-2.webp"
         ],
         accent: "#2a3a5e"
       },
       {
         colorName: "Black",
         colorId: "8217",
-        src: "/products/male-snow-wash-sweatpants-black-1.png",
+        src: "/products/male-snow-wash-sweatpants-black-1.webp",
         images: [
-          "/products/male-snow-wash-sweatpants-black-1.png",
-          "/products/male-snow-wash-sweatpants-black-2.png"
+          "/products/male-snow-wash-sweatpants-black-1.webp",
+          "/products/male-snow-wash-sweatpants-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Light Gray",
         colorId: "8219",
-        src: "/products/male-snow-wash-sweatpants-light-gray-1.png",
+        src: "/products/male-snow-wash-sweatpants-light-gray-1.webp",
         images: [
-          "/products/male-snow-wash-sweatpants-light-gray-1.png",
-          "/products/male-snow-wash-sweatpants-light-gray-2.png"
+          "/products/male-snow-wash-sweatpants-light-gray-1.webp",
+          "/products/male-snow-wash-sweatpants-light-gray-2.webp"
         ],
         accent: "#c8c5c0"
       },
       {
         colorName: "Dark Gray",
         colorId: "8221",
-        src: "/products/male-snow-wash-sweatpants-dark-gray-1.png",
+        src: "/products/male-snow-wash-sweatpants-dark-gray-1.webp",
         images: [
-          "/products/male-snow-wash-sweatpants-dark-gray-1.png",
-          "/products/male-snow-wash-sweatpants-dark-gray-2.png"
+          "/products/male-snow-wash-sweatpants-dark-gray-1.webp",
+          "/products/male-snow-wash-sweatpants-dark-gray-2.webp"
         ],
         accent: "#4a4a4e"
       }
@@ -2703,7 +2703,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 1,
     representative: {
       colorName: "Black",
-      src: "/products/male-stitched-joggers-black-1.png",
+      src: "/products/male-stitched-joggers-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2715,10 +2715,10 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "8189",
-        src: "/products/male-stitched-joggers-black-1.png",
+        src: "/products/male-stitched-joggers-black-1.webp",
         images: [
-          "/products/male-stitched-joggers-black-1.png",
-          "/products/male-stitched-joggers-black-2.png"
+          "/products/male-stitched-joggers-black-1.webp",
+          "/products/male-stitched-joggers-black-2.webp"
         ],
         accent: "#1a1a1a"
       }
@@ -2740,7 +2740,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 6,
     representative: {
       colorName: "Navy Blue",
-      src: "/products/male-vintage-shorts-navy-blue-1.png",
+      src: "/products/male-vintage-shorts-navy-blue-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2752,60 +2752,60 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "10388",
-        src: "/products/male-vintage-shorts-black-1.png",
+        src: "/products/male-vintage-shorts-black-1.webp",
         images: [
-          "/products/male-vintage-shorts-black-1.png",
-          "/products/male-vintage-shorts-black-2.png"
+          "/products/male-vintage-shorts-black-1.webp",
+          "/products/male-vintage-shorts-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Apricot",
         colorId: "10394",
-        src: "/products/male-vintage-shorts-apricot-1.png",
+        src: "/products/male-vintage-shorts-apricot-1.webp",
         images: [
-          "/products/male-vintage-shorts-apricot-1.png",
-          "/products/male-vintage-shorts-apricot-2.png"
+          "/products/male-vintage-shorts-apricot-1.webp",
+          "/products/male-vintage-shorts-apricot-2.webp"
         ],
         accent: "#e8b89a"
       },
       {
         colorName: "Light Coffee",
         colorId: "10387",
-        src: "/products/male-vintage-shorts-light-coffee-1.png",
+        src: "/products/male-vintage-shorts-light-coffee-1.webp",
         images: [
-          "/products/male-vintage-shorts-light-coffee-1.png",
-          "/products/male-vintage-shorts-light-coffee-2.png"
+          "/products/male-vintage-shorts-light-coffee-1.webp",
+          "/products/male-vintage-shorts-light-coffee-2.webp"
         ],
         accent: "#8a6a4a"
       },
       {
         colorName: "Dark Gray",
         colorId: "10392",
-        src: "/products/male-vintage-shorts-dark-gray-1.png",
+        src: "/products/male-vintage-shorts-dark-gray-1.webp",
         images: [
-          "/products/male-vintage-shorts-dark-gray-1.png",
-          "/products/male-vintage-shorts-dark-gray-2.png"
+          "/products/male-vintage-shorts-dark-gray-1.webp",
+          "/products/male-vintage-shorts-dark-gray-2.webp"
         ],
         accent: "#4a4a4e"
       },
       {
         colorName: "Navy Blue",
         colorId: "10391",
-        src: "/products/male-vintage-shorts-navy-blue-1.png",
+        src: "/products/male-vintage-shorts-navy-blue-1.webp",
         images: [
-          "/products/male-vintage-shorts-navy-blue-1.png",
-          "/products/male-vintage-shorts-navy-blue-2.png"
+          "/products/male-vintage-shorts-navy-blue-1.webp",
+          "/products/male-vintage-shorts-navy-blue-2.webp"
         ],
         accent: "#2a3a6e"
       },
       {
         colorName: "Dark Purple",
         colorId: "10397",
-        src: "/products/male-vintage-shorts-dark-purple-1.png",
+        src: "/products/male-vintage-shorts-dark-purple-1.webp",
         images: [
-          "/products/male-vintage-shorts-dark-purple-1.png",
-          "/products/male-vintage-shorts-dark-purple-2.png"
+          "/products/male-vintage-shorts-dark-purple-1.webp",
+          "/products/male-vintage-shorts-dark-purple-2.webp"
         ],
         accent: "#4a2a5a"
       }
@@ -2826,7 +2826,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Medium Gray",
-      src: "/products/male-vintage-washed-waist-pants-medium-gray-1.png",
+      src: "/products/male-vintage-washed-waist-pants-medium-gray-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2838,50 +2838,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Washed Black",
         colorId: "8498",
-        src: "/products/male-vintage-washed-waist-pants-washed-black-1.png",
+        src: "/products/male-vintage-washed-waist-pants-washed-black-1.webp",
         images: [
-          "/products/male-vintage-washed-waist-pants-washed-black-1.png",
-          "/products/male-vintage-washed-waist-pants-washed-black-2.png"
+          "/products/male-vintage-washed-waist-pants-washed-black-1.webp",
+          "/products/male-vintage-washed-waist-pants-washed-black-2.webp"
         ],
         accent: "#3a3a3e"
       },
       {
         colorName: "Medium Gray",
         colorId: "8500",
-        src: "/products/male-vintage-washed-waist-pants-medium-gray-1.png",
+        src: "/products/male-vintage-washed-waist-pants-medium-gray-1.webp",
         images: [
-          "/products/male-vintage-washed-waist-pants-medium-gray-1.png",
-          "/products/male-vintage-washed-waist-pants-medium-gray-2.png"
+          "/products/male-vintage-washed-waist-pants-medium-gray-1.webp",
+          "/products/male-vintage-washed-waist-pants-medium-gray-2.webp"
         ],
         accent: "#9a9a9e"
       },
       {
         colorName: "Rose Pink",
         colorId: "8501",
-        src: "/products/male-vintage-washed-waist-pants-rose-pink-1.png",
+        src: "/products/male-vintage-washed-waist-pants-rose-pink-1.webp",
         images: [
-          "/products/male-vintage-washed-waist-pants-rose-pink-1.png",
-          "/products/male-vintage-washed-waist-pants-rose-pink-2.png"
+          "/products/male-vintage-washed-waist-pants-rose-pink-1.webp",
+          "/products/male-vintage-washed-waist-pants-rose-pink-2.webp"
         ],
         accent: "#e88aa0"
       },
       {
         colorName: "Coffee",
         colorId: "8499",
-        src: "/products/male-vintage-washed-waist-pants-coffee-1.png",
+        src: "/products/male-vintage-washed-waist-pants-coffee-1.webp",
         images: [
-          "/products/male-vintage-washed-waist-pants-coffee-1.png",
-          "/products/male-vintage-washed-waist-pants-coffee-2.png"
+          "/products/male-vintage-washed-waist-pants-coffee-1.webp",
+          "/products/male-vintage-washed-waist-pants-coffee-2.webp"
         ],
         accent: "#5a3a20"
       },
       {
         colorName: "Dark Gray",
         colorId: "8502",
-        src: "/products/male-vintage-washed-waist-pants-dark-gray-1.png",
+        src: "/products/male-vintage-washed-waist-pants-dark-gray-1.webp",
         images: [
-          "/products/male-vintage-washed-waist-pants-dark-gray-1.png",
-          "/products/male-vintage-washed-waist-pants-dark-gray-2.png"
+          "/products/male-vintage-washed-waist-pants-dark-gray-1.webp",
+          "/products/male-vintage-washed-waist-pants-dark-gray-2.webp"
         ],
         accent: "#4a4a4e"
       }
@@ -2903,7 +2903,7 @@ export const PRODUCTS: Product[] =   [
     variantCount: 5,
     representative: {
       colorName: "Black",
-      src: "/products/male-waffle-knit-tee-black-1.png",
+      src: "/products/male-waffle-knit-tee-black-1.webp",
       width: 1500,
       height: 1875
     },
@@ -2915,50 +2915,50 @@ export const PRODUCTS: Product[] =   [
       {
         colorName: "Black",
         colorId: "9263",
-        src: "/products/male-waffle-knit-tee-black-1.png",
+        src: "/products/male-waffle-knit-tee-black-1.webp",
         images: [
-          "/products/male-waffle-knit-tee-black-1.png",
-          "/products/male-waffle-knit-tee-black-2.png"
+          "/products/male-waffle-knit-tee-black-1.webp",
+          "/products/male-waffle-knit-tee-black-2.webp"
         ],
         accent: "#1a1a1a"
       },
       {
         colorName: "Light Apricot",
         colorId: "9268",
-        src: "/products/male-waffle-knit-tee-light-apricot-1.png",
+        src: "/products/male-waffle-knit-tee-light-apricot-1.webp",
         images: [
-          "/products/male-waffle-knit-tee-light-apricot-1.png",
-          "/products/male-waffle-knit-tee-light-apricot-2.png"
+          "/products/male-waffle-knit-tee-light-apricot-1.webp",
+          "/products/male-waffle-knit-tee-light-apricot-2.webp"
         ],
         accent: "#eac8a8"
       },
       {
         colorName: "Army Green",
         colorId: "9270",
-        src: "/products/male-waffle-knit-tee-army-green-1.png",
+        src: "/products/male-waffle-knit-tee-army-green-1.webp",
         images: [
-          "/products/male-waffle-knit-tee-army-green-1.png",
-          "/products/male-waffle-knit-tee-army-green-2.png"
+          "/products/male-waffle-knit-tee-army-green-1.webp",
+          "/products/male-waffle-knit-tee-army-green-2.webp"
         ],
         accent: "#4a5a3a"
       },
       {
         colorName: "Gray",
         colorId: "9267",
-        src: "/products/male-waffle-knit-tee-gray-1.png",
+        src: "/products/male-waffle-knit-tee-gray-1.webp",
         images: [
-          "/products/male-waffle-knit-tee-gray-1.png",
-          "/products/male-waffle-knit-tee-gray-2.png"
+          "/products/male-waffle-knit-tee-gray-1.webp",
+          "/products/male-waffle-knit-tee-gray-2.webp"
         ],
         accent: "#7a7a7e"
       },
       {
         colorName: "Blue",
         colorId: "9264",
-        src: "/products/male-waffle-knit-tee-blue-1.png",
+        src: "/products/male-waffle-knit-tee-blue-1.webp",
         images: [
-          "/products/male-waffle-knit-tee-blue-1.png",
-          "/products/male-waffle-knit-tee-blue-2.png"
+          "/products/male-waffle-knit-tee-blue-1.webp",
+          "/products/male-waffle-knit-tee-blue-2.webp"
         ],
         accent: "#4a6fb8"
       }
