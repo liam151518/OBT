@@ -10,3 +10,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Product detail page uses a "single-screen experience" — the page
+   itself never scrolls; only the image stack inside scrolls. We scope
+   this to a class on the page wrapper so the landing / shop pages,
+   which have long-scrolling content, are unaffected. */
+.no-page-scroll {
+  height: 100vh;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+/* Product detail image stack — hide the scrollbar so the polished
+   look stays clean. Wheel, drag, and touch all still work; only the
+   bar is hidden. */
+.image-stack {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE / legacy Edge */
+}
+.image-stack::-webkit-scrollbar {
+  display: none; /* Chromium / Safari */
+}

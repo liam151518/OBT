@@ -2,6 +2,7 @@
 
 import { useLayoutEffect, useMemo, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 /**
  * Product scatter, modeled on SKYLRK's floating-product-grid.
@@ -46,9 +47,13 @@ import Image from "next/image";
  */
 
 type ProductSpec = {
+  /** Public URL of the product's representative mockup PNG. */
   src: string;
+  /** Alt text for screen readers — the product's display name. */
   alt: string;
+  /** Pixel width of the source PNG (for next/image). */
   width: number;
+  /** Pixel height of the source PNG. */
   height: number;
   /**
    * Dominant color of the product, hex string (e.g. "#ff8aa1").
@@ -61,7 +66,16 @@ type ProductSpec = {
    * hex natively, so the parent component can pass it straight in.
    */
   accent: string;
+  /**
+   * Slug for the future /product/[slug] detail page. When present,
+   * the tile renders as a `<Link>` that navigates to the detail page.
+   * When absent (legacy landing-page use), the tile stays as a plain
+   * `<button>`.
+   */
+  slug?: string;
 };
+
+export type { ProductSpec };
 
 type Product = ProductSpec & {
   /** column in the 12-col grid (1..12) — fixed per slot */
@@ -149,25 +163,29 @@ const SECTION_PAD_Y = 150;
  * to match the actual product color in the source images; the
  * background lerps from a neutral gray (default) toward this color
  * over ~400ms.
+ *
+ * The Shop page passes its own items via the `items` prop, so this
+ * default only kicks in for the landing page and any caller that
+ * doesn't supply its own list.
  */
-const PRODUCT_ITEMS: ProductSpec[] = [
+const DEFAULT_PRODUCT_ITEMS: ProductSpec[] = [
   // Female (8) — chosen for visual variety: pink, navy, khaki, plum, gray, etc.
-  { src: "/products/f-halter-bra-pink.png",                     alt: "Halter Bra",            width: 1500, height: 1875, accent: "#f4a3b5" },
-  { src: "/products/f-criss-cross-bra-navy-blue.png",           alt: "Criss-Cross Bra",       width: 1500, height: 1875, accent: "#2a3a6e" },
-  { src: "/products/f-crop-tank-khaki.png",                     alt: "Crop Tank",             width: 1500, height: 1875, accent: "#b8a07e" },
-  { src: "/products/f-halter-crop-tank-pink.png",               alt: "Halter Crop Tank",      width: 1500, height: 1875, accent: "#f08aa0" },
-  { src: "/products/f-essential-hoodie-dark-reddish-purple.png", alt: "Essential Hoodie",     width: 1500, height: 1875, accent: "#5a2a3a" },
-  { src: "/products/f-flare-jeans-light-gray.png",              alt: "Flare Jeans",           width: 1500, height: 1875, accent: "#c8c5c0" },
-  { src: "/products/f-a-line-skirt-navy-blue.png",              alt: "A-Line Skirt",          width: 1500, height: 1875, accent: "#1f2d4f" },
-  { src: "/products/f-track-jacket-plum-purple.png",            alt: "Track Jacket",          width: 1500, height: 1875, accent: "#7a3a5a" },
+  { src: "/products/female-halter-bra-pink.png",                 alt: "Halter Bra",            width: 1500, height: 1875, accent: "#f4a3b5", slug: "halter-bra" },
+  { src: "/products/female-criss-cross-bra-navy-blue.png",       alt: "Criss-Cross Bra",       width: 1500, height: 1875, accent: "#2a3a6e", slug: "criss-cross-bra" },
+  { src: "/products/female-crop-tank-khaki.png",                 alt: "Crop Tank",             width: 1500, height: 1875, accent: "#b8a07e", slug: "crop-tank" },
+  { src: "/products/female-halter-crop-tank-pink.png",           alt: "Halter Crop Tank",      width: 1500, height: 1875, accent: "#f08aa0", slug: "halter-crop-tank" },
+  { src: "/products/female-essential-hoodie-dark-reddish-purple.png", alt: "Essential Hoodie",  width: 1500, height: 1875, accent: "#5a2a3a", slug: "essential-hoodie" },
+  { src: "/products/female-flare-jeans-light-gray.png",          alt: "Flare Jeans",           width: 1500, height: 1875, accent: "#c8c5c0", slug: "flare-jeans" },
+  { src: "/products/female-a-line-skirt-navy-blue.png",          alt: "A-Line Skirt",          width: 1500, height: 1875, accent: "#1f2d4f", slug: "a-line-skirt" },
+  { src: "/products/female-track-jacket-plum-purple.png",        alt: "Track Jacket",          width: 1500, height: 1875, accent: "#7a3a5a", slug: "track-jacket" },
   // Male (7) — blue, tan, gray, brown, etc.
-  { src: "/products/m-heavyweight-tank-royal-blue.png",         alt: "Heavyweight Tank",      width: 1500, height: 1875, accent: "#3a5fb8" },
-  { src: "/products/m-waffle-knit-tee-light-apricot.png",       alt: "Waffle Knit Tee",       width: 1500, height: 1875, accent: "#e8b89a" },
-  { src: "/products/m-boxy-tank-gray.png",                      alt: "Boxy Tank",             width: 1500, height: 1875, accent: "#7a7a7e" },
-  { src: "/products/m-frayed-hoodie-brown.png",                 alt: "Frayed Hoodie",         width: 1500, height: 1875, accent: "#5a3a28" },
-  { src: "/products/m-snow-wash-sweatpants-light-gray.png",     alt: "Snow Wash Sweatpants",  width: 1500, height: 1875, accent: "#bdb8b0" },
-  { src: "/products/m-mesh-shorts-sky-blue.png",                alt: "Mesh Shorts",           width: 1500, height: 1875, accent: "#8ac4d8" },
-  { src: "/products/m-quarter-zip-tee-static-blue.png",         alt: "Quarter-Zip Tee",       width: 1500, height: 1875, accent: "#4a5a7a" },
+  { src: "/products/male-heavyweight-tank-royal-blue.png",       alt: "Heavyweight Tank",      width: 1500, height: 1875, accent: "#3a5fb8", slug: "heavyweight-tank" },
+  { src: "/products/male-waffle-knit-tee-light-apricot.png",     alt: "Waffle Knit Tee",       width: 1500, height: 1875, accent: "#e8b89a", slug: "waffle-knit-tee" },
+  { src: "/products/male-boxy-tank-gray.png",                    alt: "Boxy Tank",             width: 1500, height: 1875, accent: "#7a7a7e", slug: "boxy-tank" },
+  { src: "/products/male-frayed-hoodie-brown.png",               alt: "Frayed Hoodie",         width: 1500, height: 1875, accent: "#5a3a28", slug: "frayed-hoodie" },
+  { src: "/products/male-snow-wash-sweatpants-light-gray.png",   alt: "Snow Wash Sweatpants",  width: 1500, height: 1875, accent: "#bdb8b0", slug: "snow-wash-sweatpants" },
+  { src: "/products/male-mesh-shorts-sky-blue.png",              alt: "Mesh Shorts",           width: 1500, height: 1875, accent: "#8ac4d8", slug: "mesh-shorts" },
+  { src: "/products/male-quarter-zip-tee-static-blue.png",       alt: "Quarter-Zip Tee",       width: 1500, height: 1875, accent: "#4a5a7a", slug: "quarter-zip-tee" },
 ];
 
 const SEED = 0x4f5e6d7c;
@@ -201,6 +219,13 @@ function buildLayout(seed: number, items: ProductSpec[]): Product[] {
 
 type ProductScatterProps = {
   /**
+   * The products to render. Defaults to a hand-picked 15-item set
+   * that mirrors the original landing-page scatter. The Shop page
+   * passes `getProductsByGender("female" | "male")` from
+   * `src/data/products.ts`.
+   */
+  items?: ProductSpec[];
+  /**
    * Called with the product's dominant color (hex) when the user
    * hovers or focuses a tile, and with `null` when they leave.
    * The parent uses this to retint the background TV shader so the
@@ -209,7 +234,7 @@ type ProductScatterProps = {
   onColorChange?: (accent: string | null) => void;
 };
 
-export function ProductScatter({ onColorChange }: ProductScatterProps = {}) {
+export function ProductScatter({ items, onColorChange }: ProductScatterProps = {}) {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -221,39 +246,48 @@ export function ProductScatter({ onColorChange }: ProductScatterProps = {}) {
     return () => cancelAnimationFrame(id);
   }, []);
 
-  const products = useMemo(() => buildLayout(SEED, PRODUCT_ITEMS), []);
+  // Memoize the layout against the items identity. Switching items
+  // (e.g. toggling gender on /shop) regenerates the random jitter
+  // because each item carries a stable position in the SEED-driven
+  // mulberry32 sequence; but because the items themselves are
+  // identity-stable (same PRODUCTS array across re-renders), the
+  // memo doesn't churn.
+  const renderItems = items ?? DEFAULT_PRODUCT_ITEMS;
+  const products = useMemo(() => buildLayout(SEED, renderItems), [renderItems]);
+
+  // Dynamic min-height: enough room for all rows + per-tile stagger
+  // + jitter + section padding, capped so tall narrow displays don't
+  // become a chore to scroll.
+  //   rows = ceil(items / 5)
+  //   natural height = rows × tileSize + (rows-1) × rowGap + 2 × padY
+  //                  + 2 × maxStaggerY + 2 × maxJitterY (≈ 6vw)
+  const minHeight = useMemo(() => {
+    const rows = Math.max(1, Math.ceil(renderItems.length / 5));
+    // Tile size + gaps in vw, then convert: 18vw tile + 7vw gap.
+    // Add 6vw safety for max stagger+jitter. Plus 300px in absolute.
+    const vwSum = rows * TILE_SIZE_VW + (rows - 1) * ROW_GAP_VW + 6;
+    const formula = `calc(${vwSum}vw + ${SECTION_PAD_Y * 2}px)`;
+    return `min(300vh, max(160vh, ${formula}))`;
+  }, [renderItems.length]);
 
   return (
     <section
       ref={sectionRef}
       className="relative z-20 w-full"
       style={{
-        // SKYLRK-style vertical distribution:
-        //  - grid-template-rows is implicit; CSS Grid's auto-flow
-        //    places items in the first row where their declared
-        //    grid-column doesn't conflict with existing items.
-        //    For our 5-position rotation over 15 products, this
-        //    produces 6 rows of 3,2,3,2,3,2 items each (verified
-        //    by simulation).
-        //  - align-content: space-evenly distributes the rows
-        //    evenly inside the section, with extra space above,
-        //    between, and below.
-        //  - min-height is sized so the section is always tall
-        //    enough to hold all 6 rows + per-tile stagger + jitter
-        //    + padding WITHOUT overlap, then capped at 250vh so
-        //    tall narrow viewports don't become a chore to scroll.
+        // SKYLRK-style vertical distribution: implicit grid-template-rows,
+        // CSS Grid's auto-flow places items in the first row where their
+        // declared grid-column doesn't conflict. With a 5-position
+        // rotation, items distribute roughly evenly across the rows.
         //
-        //   natural content height (worst case, with stagger +
-        //   jitter) =
-        //     6 × tileSize + 5 × rowGap + 2 × padY
-        //     + 2 × maxStaggerY + 2 × maxJitterY (3vw + 3vw)
-        //   = 6 × 18vw + 5 × 7vw + 300px + 6vw + 6vw
-        //   = 155vw + 300px
+        // align-content: space-evenly distributes the rows inside the
+        // section, with extra space above, between, and below.
         //
-        // The min-height formula caps at 300vh so the page doesn't
-        // become a chore to scroll on tall narrow displays, but
-        // grows generously with vw to fit content on wide ones.
-        minHeight: `min(300vh, max(160vh, calc(155vw + 300px)))`,
+        // min-height is computed dynamically so the section is always
+        // tall enough for `rows × tileSize + (rows-1) × rowGap + 2 × padY`
+        // plus max stagger+jitter — capped at 300vh so tall narrow
+        // displays don't become a chore to scroll.
+        minHeight,
         paddingTop: "150px",
         paddingBottom: "150px",
         paddingLeft: "50px",
@@ -289,17 +323,23 @@ export function ProductScatter({ onColorChange }: ProductScatterProps = {}) {
             // tile sits flush inside its grid cell.
           }}
         >
-          <button
-            type="button"
-            className="group block h-full w-full cursor-pointer overflow-visible bg-transparent p-0 focus:outline-none"
+          {/*
+            Tile interactivity:
+            - When `p.slug` is present (Shop page), wrap in <Link> so
+              clicks navigate to /product/<slug>. Hover/focus still
+              retints the shader via the wrapper's event handlers.
+            - When no slug (legacy landing-page fallback), render a
+              plain <button> so the tile stays focusable + interactive.
+          */}
+          <Link
+            href={p.slug ? `/product/${p.slug}` : "#"}
+            prefetch={false}
             aria-label={p.alt}
-            // Pointer events fire on the wrapping button; we expose
-            // both hover (mouse) and focus (keyboard) handlers so
-            // the background shader retints in either case.
             onMouseEnter={() => onColorChange?.(p.accent)}
             onMouseLeave={() => onColorChange?.(null)}
             onFocus={() => onColorChange?.(p.accent)}
             onBlur={() => onColorChange?.(null)}
+            className="group block h-full w-full cursor-pointer overflow-visible bg-transparent p-0 focus:outline-none"
           >
             <div
               className="relative h-full w-full transition-transform duration-300 ease-out group-hover:scale-[1.08] group-focus-visible:scale-[1.08]"
@@ -313,7 +353,7 @@ export function ProductScatter({ onColorChange }: ProductScatterProps = {}) {
                 className="pointer-events-none object-contain drop-shadow-[0_18px_40px_rgba(0,0,0,0.55)]"
               />
             </div>
-          </button>
+          </Link>
         </div>
       ))}
     </section>

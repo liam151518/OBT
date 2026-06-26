@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   useEffect,
   useLayoutEffect,
@@ -9,6 +11,7 @@ import {
   type CSSProperties,
   type ReactNode,
 } from "react";
+import { GenderPill } from "@/components/landing/gender-pill";
 
 /**
  * Top-of-page navigation header with two glass pills:
@@ -73,33 +76,59 @@ function useIsChromium(): boolean {
 }
 
 /**
- * The shared glass surface — every pill in the header renders this so
- * the Liquid Glass treatment stays consistent. Wraps children in the
- * pill shape, attaches the SVG backdrop-filter (Chrome), and layers
- * the CSS specular/sheen stack for the Safari/Firefox fallback.
+ * The shared Liquid Glass surface — used by every header pill AND the
+ * product detail page's panels / chips.
+ *
+ * Two visual modes:
+ *   - `pill` (default): rounded-full, inline-flex, ideal for chips
+ *     and small interactive elements
+ *   - `panel`: rounded rectangle (use `rounded` prop), block layout,
+ *     ideal for larger surfaces like the size guide or info panels
+ *
+ * Both modes share the same Chrome-only SVG `backdrop-filter: url(#…)`
+ * refraction + the layered CSS frost/sheen stack that fires in
+ * Safari/Firefox. The SVG filter `#liquid-glass` is defined once in
+ * the header SVG; product pages inherit it via the same global def.
+ *
+ * Pass an `as` to render a different element (e.g. <button>), or use
+ * the dedicated `GlassPill` / `GlassSurface` wrappers below.
  */
-function GlassPill({
+type GlassShape = "pill" | "panel";
+
+export function Glass({
   children,
+  shape = "pill",
+  rounded,
   className = "",
   style,
 }: {
   children: ReactNode;
+  shape?: GlassShape;
+  /** Custom border-radius (e.g. "rounded-2xl", "rounded-md"). Overrides the shape default. */
+  rounded?: string;
   className?: string;
   style?: CSSProperties;
 }) {
   const isChromium = useIsChromium();
+  const radiusClass =
+    rounded ??
+    (shape === "pill" ? "rounded-full" : "rounded-2xl");
+  const layoutClass =
+    shape === "pill"
+      ? "inline-flex items-center"
+      : "block";
   return (
     <div
       className={[
         "relative",
-        "inline-flex items-center",
-        "rounded-full",
+        layoutClass,
+        radiusClass,
         // Frost fallback (Safari/Firefox). Stacks on top of the
         // SVG backdrop-filter in Chrome.
         "backdrop-blur-xl backdrop-saturate-150",
         // Translucent base — the shader bleeds through
         "bg-white/10",
-        // Clip sheen children to the pill shape
+        // Clip sheen children to the rounded shape
         "overflow-hidden",
         // Drop shadow grounds the glass
         "drop-shadow-[0_8px_22px_rgba(0,0,0,0.5)]",
@@ -119,7 +148,10 @@ function GlassPill({
           filter provides the rim, but this also adds subtle depth. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-full"
+        className={[
+          "pointer-events-none absolute inset-0",
+          shape === "pill" ? "rounded-full" : rounded ?? "rounded-2xl",
+        ].join(" ")}
         style={{
           boxShadow:
             "inset 0 -1.5px 4px rgba(0,0,0,0.18), inset 0 1px 1px rgba(255,255,255,0.35)",
@@ -140,7 +172,10 @@ function GlassPill({
           non-Chrome browsers. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-full"
+        className={[
+          "pointer-events-none absolute inset-0",
+          shape === "pill" ? "rounded-full" : rounded ?? "rounded-2xl",
+        ].join(" ")}
         style={{
           background:
             "linear-gradient(to bottom, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 35%, rgba(255,255,255,0) 60%, rgba(0,0,0,0.04) 100%)",
@@ -153,22 +188,78 @@ function GlassPill({
 }
 
 /**
- * The centered logo pill.
+ * Pill-shaped glass surface — every chip and round button in the
+ * app renders this. Kept as a thin wrapper around <Glass /> for
+ * backwards compatibility with existing callers.
+ */
+export function GlassPill({
+  children,
+  className = "",
+  style,
+}: {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+}) {
+  return (
+    <Glass shape="pill" className={className} style={style}>
+      {children}
+    </Glass>
+  );
+}
+
+/**
+ * Panel-shaped glass surface — used for larger rectangles on the
+ * product detail page (size guide, info blocks, etc.). Default
+ * border-radius is `rounded-2xl`; pass `rounded` to override.
+ */
+export function GlassSurface({
+  children,
+  className = "",
+  style,
+  rounded,
+}: {
+  children: ReactNode;
+  className?: string;
+  style?: CSSProperties;
+  rounded?: string;
+}) {
+  return (
+    <Glass shape="panel" rounded={rounded} className={className} style={style}>
+      {children}
+    </Glass>
+  );
+}
+
+/**
+ * The centered logo pill. Clicking it returns the user to the
+ * landing page (/) — universal "click the logo → home" pattern.
+ *
+ * The Link wraps the entire pill content so the whole pill is the
+ * hit target, not just the logo image. We add a subtle hover state
+ * to give feedback that it's interactive (the cursor also changes
+ * via Tailwind's `cursor-pointer`).
  */
 function LogoPill() {
   return (
     <GlassPill className="px-4 py-1.5" style={{ paddingLeft: 16, paddingRight: 16 }}>
-      <Image
-        src="/obt-logo.png"
-        alt="One Body Temple"
-        width={948}
-        height={387}
-        priority
-        className="relative h-7 w-auto select-none sm:h-8"
-        style={{
-          filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.45))",
-        }}
-      />
+      <Link
+        href="/"
+        aria-label="One Body Temple — go to home"
+        className="block cursor-pointer transition-opacity duration-200 hover:opacity-80"
+      >
+        <Image
+          src="/obt-logo.png"
+          alt="One Body Temple"
+          width={948}
+          height={387}
+          priority
+          className="relative h-7 w-auto select-none sm:h-8"
+          style={{
+            filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.45))",
+          }}
+        />
+      </Link>
     </GlassPill>
   );
 }
@@ -331,8 +422,18 @@ function LeftNavPill() {
 }
 
 export function NavPill() {
+  const pathname = usePathname();
+  // The gender toggle appears everywhere EXCEPT the landing page.
+  // On /shop/* it's the catalog switcher; on /product/* it's a quick
+  // way to jump to the other gender's catalog without going back to
+  // /shop first.
+  const showGenderPill =
+    pathname !== null &&
+    pathname !== "/" &&
+    (pathname.startsWith("/shop") || pathname.startsWith("/product"));
+
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-40 grid grid-cols-[1fr_auto_1fr] items-start gap-4 px-4 pt-5 sm:px-6 sm:pt-6">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-40 grid grid-cols-[1fr_auto_1fr] items-start gap-3 px-4 pt-5 sm:gap-4 sm:px-6 sm:pt-6">
       {/*
         SVG filter — defined once, referenced by every GlassPill in the
         header via `backdrop-filter: url(#liquid-glass)`. Renders to a
@@ -399,8 +500,9 @@ export function NavPill() {
         logo, an empty spacer of equal width to the left pill on the
         right. We use a hidden spacer to balance the layout.
       */}
-      <div className="pointer-events-auto flex justify-start">
+      <div className="pointer-events-auto flex flex-col items-start gap-2">
         <LeftNavPill />
+        {showGenderPill ? <GenderPill /> : null}
       </div>
       <div className="pointer-events-auto flex justify-center">
         <LogoPill />
