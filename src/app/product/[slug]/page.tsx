@@ -25,7 +25,13 @@ export default async function ProductPage({ params }: Props) {
   return (
     <>
       <ProductDetail product={product} />
-      <NavPill />
+      {/* Pass the product's gender to the nav pill so the Women/Men
+          toggle stays highlighted on the chip that matches the
+          gender context the user navigated from (e.g. they came from
+          /shop/male → product.gender is "male" → "Men" stays active).
+          Clicking the active chip takes them back to /shop/<gender>,
+          clicking the other chip switches gender context. */}
+      <NavPill forceGender={product.gender} />
     </>
   );
 }

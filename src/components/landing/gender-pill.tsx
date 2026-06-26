@@ -21,12 +21,18 @@ import type { Gender } from "@/data/products";
  *     selection to localStorage (so the active state survives a
  *     direct visit to /shop without a gender in the URL, once we
  *     add that fallback route — for now the URL is the source of truth).
- *   - Active state is derived from the current pathname so the chip
- *     always matches where the user actually is.
+ *   - Active state resolution (in priority order):
+ *     1. Explicit `forceGender` prop — used by the product detail
+ *        page so the pill highlights the gender of the product the
+ *        user is viewing (i.e. the gender context they came from
+ *        when they clicked in from /shop/<gender>).
+ *     2. Current pathname — highlights Women/Men on /shop/<gender>.
+ *     3. `DEFAULT_GENDER` (female) — used on the landing page (/)
+ *        and on direct visits to other non-shop routes.
  *
  * Hydration safety:
- *   - Active state is computed from `usePathname()`, which is
- *     deterministic on the server. No localStorage read here.
+ *   - Active state is computed from `usePathname()` + `forceGender`,
+ *     both deterministic on the server. No localStorage read here.
  */
 
 const GENDER_STORAGE_KEY = "obt.shop.gender";
@@ -47,11 +53,22 @@ const SEGMENTS: { label: string; value: Gender; href: string }[] = [
   { label: "Men",   value: "male",   href: "/shop/male" },
 ];
 
-export function GenderPill() {
+type GenderPillProps = {
+  /**
+   * When provided, the pill highlights this gender regardless of the
+   * current URL. Used by the product detail page so the active chip
+   * reflects the gender of the product being viewed (which is the
+   * gender context the user navigated from when they clicked the
+   * product tile in /shop/<gender>).
+   */
+  forceGender?: Gender;
+};
+
+export function GenderPill({ forceGender }: GenderPillProps = {}) {
   const pathname = usePathname();
-  const active = activeGenderFromPath(pathname);
+  const active: Gender = forceGender ?? activeGenderFromPath(pathname);
   // `mounted` is only used to know when localStorage is available;
-  // the visual state is always derived from pathname.
+  // the visual state is always derived from pathname + forceGender.
   const [, setMounted] = useState(false);
   useEffect(() => {
     setMounted(true);

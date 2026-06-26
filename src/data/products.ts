@@ -52,7 +52,13 @@ export type Product = {
   };
   /** Hex color used to retint the background shader on hover/focus */
   accent: string;
-  /** Tapstitch Design URL — the eventual "Buy" link */
+  /** Tapstitch Design URL — INTERNAL USE ONLY.
+   *  This is the URL we'll POST orders to once the fulfillment
+   *  bridge is built. Tapstitch is our supplier, NOT part of the
+   *  storefront's customer-facing surface. No component should ever
+   *  render this as a link or button — the storefront uses our own
+   *  cart + checkout (Convex) instead. Kept on the type so the seed
+   *  and any admin tooling can still read it server-side. */
   tapstitchUrl: string;
   /** On-disk folder name (may differ from `slug` when aliased) */
   diskFolder: string;

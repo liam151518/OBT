@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { LoadingScreen } from "@/components/landing/loading-screen";
+import { ConvexClientProvider } from "@/components/convex-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <body className="min-h-full bg-black text-white">
-        <LoadingScreen />
-        {children}
+        <ConvexClientProvider>
+          <LoadingScreen />
+          {children}
+        </ConvexClientProvider>
       </body>
     </html>
   );

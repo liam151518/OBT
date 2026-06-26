@@ -12,6 +12,7 @@ import {
   type ReactNode,
 } from "react";
 import { GenderPill } from "@/components/landing/gender-pill";
+import type { Gender } from "@/data/products";
 
 /**
  * Top-of-page navigation header with two glass pills:
@@ -421,7 +422,7 @@ function LeftNavPill() {
   );
 }
 
-export function NavPill() {
+export function NavPill({ forceGender }: { forceGender?: Gender } = {}) {
   const pathname = usePathname();
   // The gender toggle appears everywhere EXCEPT the landing page.
   // On /shop/* it's the catalog switcher; on /product/* it's a quick
@@ -502,7 +503,7 @@ export function NavPill() {
       */}
       <div className="pointer-events-auto flex flex-col items-start gap-2">
         <LeftNavPill />
-        {showGenderPill ? <GenderPill /> : null}
+        {showGenderPill ? <GenderPill forceGender={forceGender} /> : null}
       </div>
       <div className="pointer-events-auto flex justify-center">
         <LogoPill />

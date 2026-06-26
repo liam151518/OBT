@@ -12,9 +12,13 @@ import {
   type WheelEvent as ReactWheelEvent,
 } from "react";
 import Image from "next/image";
+import { useMutation, useQuery } from "convex/react";
 import { PolishedShader } from "@/components/landing/polished-shader";
 import { GlassPill, GlassSurface } from "@/components/landing/nav-pill";
 import type { Product, ProductVariant } from "@/data/products";
+import { sizeChartFor } from "@/data/sizing";
+import { api } from "../../../convex/_generated/api";
+import { useCartSessionId } from "@/lib/cart-session";
 
 /**
  * The product detail page — single-screen experience.
@@ -26,9 +30,11 @@ import type { Product, ProductVariant } from "@/data/products";
  *   - Small thumbnail strip pinned bottom-left shows the current
  *     variant's available views; click one to jump straight to it.
  *   - Compact details card pinned bottom-right: title, color row
- *     (dots only — the color name shows on hover), size chips, and
- *     the Buy now CTA. Nothing more — keep it small and out of the
- *     way of the product.
+ *     (dots only — the color name shows on hover), size chips, the
+ *     expandable size guide, and the Buy now CTA. The CTA adds the
+ *     current selection to the Convex cart (cart:add mutation).
+ *     There is NO link out to Tapstitch — Tapstitch is our supplier
+ *     for fulfillment only and must never appear on the storefront.
  *
  * Shader retint tracks the active variant's accent.
  */
@@ -53,8 +59,36 @@ export function ProductDetail({ product }: Props) {
     return product.variants[0];
   }, [product]);
 
+  // Size chart for THIS product — category-aware (tops / bottoms /
+  // bras / bodysuits) and filtered to only the sizes this product
+  // offers. Re-derives only when product changes.
+  const sizeChart = useMemo(
+    () => sizeChartFor(product.category, product.sizes),
+    [product.category, product.sizes],
+  );
+
   const [activeColor, setActiveColor] = useState<string>(initialVariant.colorName);
   const [activeSize, setActiveSize] = useState<string | null>(null);
+  // Size guide disclosure. Default collapsed — the user sees just a
+  // small "Size guide" link under the size chips; clicking it expands
+  // a panel with the size chart. Clicking again (or anywhere outside)
+  // collapses it.
+  const [sizeGuideOpen, setSizeGuideOpen] = useState(false);
+
+  // ---- Cart wire-up ----------------------------------------------------
+  // `useCartSessionId` returns null on the server + first client paint
+  // (to avoid hydration mismatches) and the persisted id on subsequent
+  // renders. The CTA stays disabled until the id is available.
+  const cartSessionId = useCartSessionId();
+  const addToCart = useMutation(api.cart.add);
+  // Look up the Convex product id for this product's slug so we can
+  // call cart.add with a real Convex Id<"products">. Returns null
+  // until Convex has the row (or if the seed hasn't been run yet).
+  const convexProduct = useQuery(api.products.getBySlug, { slug: product.slug });
+  const convexProductId = convexProduct?._id ?? null;
+  // Local "just added" flash state so the button can give feedback
+  // ("Added ✓" for ~1.5s) after the mutation resolves.
+  const [justAdded, setJustAdded] = useState(false);
 
   const activeVariant = useMemo<ProductVariant>(
     () => product.variants.find((v) => v.colorName === activeColor) ?? initialVariant,
@@ -71,24 +105,27 @@ export function ProductDetail({ product }: Props) {
   const colorB = heroAccent || NEUTRAL_B;
 
   // ---- Image stack: transform-based slider ------------------------------
-  // The user must SEE the current image move as they drag and the
-  // next image come in — that's not what a CSS scroll-snap container
-  // gives you (scroll-snap snaps hard to the next slide and the user
-  // doesn't feel like they're dragging the image).
-  //
-  // Layout: a vertical flex column of N full-viewport rows. The
-  // wrapper applies a single transform `translate3d(0, Ypx, 0)` that
-  // shifts the entire column. Translating by `-index * 100vh` reveals
-  // image at index `index` because the rows are physically stacked
-  // one below the next.
+  // Layout: a vertical column of N rows. Each row is one full
+  // viewport tall, stacked one below the next (image 0 at top, image
+  // 1 below it, etc). The wrapper element has explicit height
+  // N × 100vh and applies a single transform `translate3d(0, Y, 0)`
+  // that shifts the entire column. Translating by `-index × rowHeight`
+  // reveals image at index `index` because the rows are physically
+  // stacked one below the next.
   //
   // Drag: pointermove writes the drag delta directly to
   // `el.style.transform` (no React re-render per frame).
   //
-  // Release: snap to the nearest image. Two heuristics — distance
-  // OR velocity — but the simpler one is just distance. We snap
-  // toward the direction the user dragged: positive dragPx (down)
-  // → previous image; negative dragPx (up) → next image.
+  // Release: snap to the nearest image. Direction is by the sign of
+  // the drag offset:
+  //   dragPx > 0 (drag down) → previous image (target - 1)
+  //   dragPx < 0 (drag up)   → next image (target + 1)
+  // We require |dragPx| > 10% of rowHeight to commit; otherwise we
+  // snap back to the current image.
+  //
+  // The rowHeight is captured at pointerdown (not read live from
+  // window.innerHeight every frame) so a mobile browser showing/
+  // hiding its URL bar mid-drag doesn't shift the math.
   //
   // Touch input flows through the same pointer handlers because
   // modern browsers unify touch + mouse + pen under Pointer Events.
@@ -96,10 +133,10 @@ export function ProductDetail({ product }: Props) {
   const dragStateRef = useRef<{
     pointerId: number;
     startY: number;
+    rowHeight: number;
     moved: boolean;
   } | null>(null);
   const dragOffsetRef = useRef(0); // current pixel offset from snapped position
-
   // Live (non-React) state we mutate during drag for smoothness.
   const liveIndexRef = useRef(0);
 
@@ -111,24 +148,25 @@ export function ProductDetail({ product }: Props) {
   //   - During drag we want NO transition (transform tracks pointer
   //     1:1).
   //   - During snap we want a 320ms cubic-bezier transition. We
-  //     set the new transition value, force a reflow with
+  //     set the transition value first, then force a reflow with
   //     `void el.offsetHeight`, then set the new transform — that
-  //     order makes the browser commit the transition value first
-  //     so the transform change animates from the previous value
-  //     instead of batching both into one commit (where the
-  //     transition silently doesn't fire).
+  //     order makes the browser commit the transition value before
+  //     the transform change so the new transform animates FROM the
+  //     previous transform value (instead of both writes batching
+  //     into one frame where the transition silently doesn't fire).
   const applyTransform = useCallback((index: number, dragPx: number) => {
     const el = stackRef.current;
     if (!el) return;
-    const rowHeight = window.innerHeight;
+    const s = dragStateRef.current;
+    const rowHeight = s?.rowHeight ?? window.innerHeight;
     const y = -index * rowHeight + dragPx;
-    const isDragging = dragStateRef.current !== null;
+    const isDragging = s !== null;
     if (isDragging) {
       el.style.transition = "none";
       el.style.transform = `translate3d(0, ${y}px, 0)`;
     } else {
       el.style.transition = "transform 320ms cubic-bezier(0.22, 1, 0.36, 1)";
-      void el.offsetHeight; // commit transition before transform
+      void el.offsetHeight;
       el.style.transform = `translate3d(0, ${y}px, 0)`;
     }
     liveIndexRef.current = index;
@@ -142,6 +180,7 @@ export function ProductDetail({ product }: Props) {
     dragStateRef.current = {
       pointerId: e.pointerId,
       startY: e.clientY,
+      rowHeight: window.innerHeight,
       moved: false,
     };
     el.setPointerCapture(e.pointerId);
@@ -170,18 +209,19 @@ export function ProductDetail({ product }: Props) {
         // pointer already released
       }
     }
+    // CRITICAL: null out the drag state BEFORE calling applyTransform
+    // so the snap branch runs (transition fires, wrapper animates to
+    // the new index). Keep the captured rowHeight around via the
+    // closure so we use the same rowHeight as the drag used.
+    const rowHeight = s.rowHeight;
     dragStateRef.current = null;
 
     if (!el) return;
-    const h = window.innerHeight;
-    if (h <= 0) return;
 
-    // Decide where to snap — purely distance-based, no velocity
-    // tracking. The user already saw the image move with their
-    // finger during drag, so 10% of viewport is enough of an
-    // "advance" gesture to commit to the next/previous slide.
+    // Decide where to snap — purely distance-based, using the
+    // rowHeight that was captured when the drag started.
     const dragPx = dragOffsetRef.current;
-    const threshold = h * 0.1;
+    const threshold = rowHeight * 0.1;
     const current = liveIndexRef.current;
     const last = activeImages.length - 1;
     let target = current;
@@ -192,8 +232,8 @@ export function ProductDetail({ product }: Props) {
       if (dragPx > 0) target = Math.max(0, current - 1);
       else target = Math.min(last, current + 1);
     }
-    // Commit the snap. applyTransform without an active drag will
-    // animate via the CSS transition.
+    // Commit the snap. applyTransform with a null dragState goes
+    // into the snap branch and animates via the CSS transition.
     applyTransform(target, 0);
     setActiveImageIndex(target);
   }, [activeImages.length, applyTransform]);
@@ -237,6 +277,30 @@ export function ProductDetail({ product }: Props) {
     setActiveSize((prev) => (prev === size ? null : size));
   }, []);
 
+  // Add the current selection to the Convex cart. Requires a size
+  // (we don't sell "one size fits all" yet) and the Convex product id
+  // (which depends on the seed having been run). Disables itself until
+  // the cart session id is hydrated from localStorage.
+  const onAddToCart = useCallback(async () => {
+    if (!cartSessionId) return;
+    if (!activeSize) return;
+    if (!convexProductId) return;
+    try {
+      await addToCart({
+        sessionId: cartSessionId,
+        productId: convexProductId,
+        colorName: activeVariant.colorName,
+        size: activeSize,
+        quantity: 1,
+      });
+      setJustAdded(true);
+      window.setTimeout(() => setJustAdded(false), 1500);
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error("[cart] add failed", err);
+    }
+  }, [cartSessionId, activeSize, convexProductId, activeVariant.colorName, addToCart]);
+
   // When the variant changes (activeImages swaps out), make sure the
   // slider snaps to image 0 with no leftover drag offset.
   useEffect(() => {
@@ -258,15 +322,17 @@ export function ProductDetail({ product }: Props) {
       </div>
 
       {/* Image slider — full viewport, transform-driven. The wrapper
-          is a vertical column where each image is a full-height row
-          stacked one below the next (image 0 at top, image 1 below
-          it, etc). We translate the wrapper by -index * 100% to snap
-          to a specific image. During drag we add a pixel delta on top
-          of the snap offset so the user SEES the image move with
-          their finger. No scroll-snap container, no card chrome —
-          the product image floats freely against the shader. The
-          fixed UI overlays in the corners (thumbnails bottom-left,
-          card bottom-right) sit above this on higher z-indexes. */}
+          is a vertical column with explicit height = N × 100vh (N =
+          number of images for the active variant). Each image is a
+          full-height row stacked one below the next (image 0 at top,
+          image 1 below it, etc). We translate the wrapper by
+          -index × 100vh to snap to a specific image. During drag we
+          add a pixel delta on top of the snap offset so the user
+          SEES the image move with their finger. No scroll-snap
+          container, no card chrome — the product image floats freely
+          against the shader. The fixed UI overlays in the corners
+          (thumbnails bottom-left, card bottom-right) sit above this
+          on higher z-indexes. */}
       <section
         aria-label={`${product.name} images`}
         className="fixed inset-0 z-10 overflow-hidden"
@@ -280,17 +346,21 @@ export function ProductDetail({ product }: Props) {
           onWheel={onWheel}
           onMouseDown={onSelectStart}
           // `touch-action: none` so touch goes through our pointer
-          // handlers (otherwise the browser would try to pan the
-          // page — which is locked anyway, but this also disables
-          // browser-level scroll inertia that fights the drag).
-          style={{ touchAction: "none", willChange: "transform" }}
+          // handlers. We also set the wrapper's height EXPLICITLY to
+          // N × 100vh so the absolute-positioned element always
+          // covers all rows regardless of how the inner flex column
+          // computes its own height (which can vary across browsers
+          // when the flex container has an explicit `h-screen` but
+          // its children also try to be `h-screen` with
+          // `flex-shrink: 0`).
+          style={{
+            touchAction: "none",
+            willChange: "transform",
+            height: `${activeImages.length * 100}vh`,
+          } as CSSProperties}
           className="image-stack absolute inset-x-0 top-0 cursor-grab active:cursor-grabbing"
-          // The wrapper is `height: ${total} * 100vh` so the vertical
-          // flex column inside lays out each image at its own viewport
-          // height, one below the next. translateY of -index*100vh
-          // reveals image index.
         >
-          <div className="flex h-screen w-full flex-col">
+          <div className="flex h-full w-full flex-col">
             {activeImages.map((src, i) => (
               <div
                 key={`${activeColor}-${src}`}
@@ -386,7 +456,7 @@ export function ProductDetail({ product }: Props) {
 
       {/* Bottom-right compact details card. */}
       <div className="pointer-events-none fixed bottom-6 right-6 z-30 sm:bottom-8 sm:right-8">
-        <div className="pointer-events-auto w-[min(20rem,calc(100vw-3rem))]">
+        <div className="pointer-events-auto max-h-[calc(100vh-3rem)] w-[min(20rem,calc(100vw-3rem))] overflow-y-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
           <GlassSurface className="p-5">
             {/* Title */}
             <div className="mb-4">
@@ -461,9 +531,44 @@ export function ProductDetail({ product }: Props) {
 
             {/* Size */}
             <div className="mb-5">
-              <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
-                Size
-              </p>
+              <div className="mb-2 flex items-baseline justify-between gap-2">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-white/55">
+                  Size
+                </p>
+                {/* Size guide disclosure trigger. Clicking toggles
+                    `sizeGuideOpen` which animates the chart panel
+                    below into view. The chevron rotates to reflect
+                    the open state. */}
+                <button
+                  type="button"
+                  aria-expanded={sizeGuideOpen}
+                  aria-controls="size-guide-panel"
+                  onClick={() => setSizeGuideOpen((v) => !v)}
+                  className={[
+                    "group inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-[0.18em] transition-colors duration-150",
+                    sizeGuideOpen ? "text-white" : "text-white/55 hover:text-white/85",
+                  ].join(" ")}
+                >
+                  Size guide
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 12 12"
+                    className={[
+                      "h-2.5 w-2.5 transition-transform duration-200",
+                      sizeGuideOpen ? "rotate-180" : "rotate-0",
+                    ].join(" ")}
+                  >
+                    <path
+                      d="M2 4.5l4 3.5 4-3.5"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </button>
+              </div>
               <ul className="flex flex-wrap gap-1.5">
                 {product.sizes.map((s) => {
                   const isActive = activeSize === s;
@@ -491,18 +596,110 @@ export function ProductDetail({ product }: Props) {
                   );
                 })}
               </ul>
+
+              {/* Size guide panel — collapsed by default. Uses a max-
+                  height transition for a smooth open/close (the panel
+                  has no fixed height so this is the standard
+                  auto-height trick). overflow-hidden + opacity give
+                  a polished feel. */}
+              <div
+                id="size-guide-panel"
+                aria-hidden={!sizeGuideOpen}
+                className={[
+                  "grid transition-all duration-300 ease-out",
+                  sizeGuideOpen
+                    ? "mt-3 grid-rows-[1fr] opacity-100"
+                    : "mt-0 grid-rows-[0fr] opacity-0",
+                ].join(" ")}
+                style={{ transitionProperty: "grid-template-rows, opacity, margin-top" }}
+              >
+                <div className="overflow-hidden">
+                  <div className="rounded-xl border border-white/10 bg-white/[0.04] p-3">
+                    <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                      {sizeChart.heading}
+                    </p>
+                    <p className="mb-3 text-[11px] leading-relaxed text-white/65">
+                      {sizeChart.intro}
+                    </p>
+                    {/* Compact size chart — columns + rows are
+                        category-specific (e.g. "Band / Cup" for bras,
+                        "Waist / Hip" for bottoms, "Bust / Waist / Hip"
+                        for bodysuits) and only the sizes this product
+                        offers are shown. */}
+                    <table className="w-full text-left text-[10px] text-white/65">
+                      <thead>
+                        <tr className="border-b border-white/10 text-[9px] uppercase tracking-[0.16em] text-white/45">
+                          <th className="py-1.5 pr-2 font-medium">Size</th>
+                          {sizeChart.columns.map((col, i) => (
+                            <th
+                              key={col}
+                              className={[
+                                "py-1.5 font-medium",
+                                i === 0 ? "px-2" : "",
+                                i === sizeChart.columns.length - 1 ? "pl-2" : "px-2",
+                              ].join(" ")}
+                            >
+                              {col}
+                            </th>
+                          ))}
+                          <th className="py-1.5 pl-2 font-medium">Fit</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-white/5">
+                        {sizeChart.rows.map((row) => (
+                          <tr key={row.size}>
+                            <td className="py-1.5 pr-2 font-semibold text-white/85">
+                              {row.size}
+                            </td>
+                            {row.measurements.map((m, i) => (
+                              <td
+                                key={m.label}
+                                className={[
+                                  "py-1.5",
+                                  i === 0 ? "px-2" : "",
+                                  i === row.measurements.length - 1 ? "pl-2" : "px-2",
+                                ].join(" ")}
+                              >
+                                {m.range}
+                              </td>
+                            ))}
+                            <td className="py-1.5 pl-2">{row.fit}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    <p className="mt-3 text-[10px] leading-relaxed text-white/45">
+                      {sizeChart.note}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Buy now CTA */}
-            <GlassPill className="w-full cursor-pointer justify-center transition-transform duration-200 hover:scale-[1.01]">
-              <a
-                href={product.tapstitchUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.22em] text-white"
+            {/* Buy now CTA — primary action adds the current selection
+                to the Convex cart. Disabled until both a size is picked
+                AND the cart session id has hydrated AND the Convex
+                product lookup has resolved (depends on the seed having
+                been run). Tapstitch is intentionally NOT exposed here —
+                they're our fulfillment supplier, not part of the
+                storefront's checkout surface. */}
+            <GlassPill
+              className={[
+                "w-full justify-center transition-transform duration-200",
+                cartSessionId && activeSize && convexProductId && !justAdded
+                  ? "cursor-pointer hover:scale-[1.01]"
+                  : "cursor-not-allowed opacity-50",
+              ].join(" ")}
+            >
+              <button
+                type="button"
+                onClick={onAddToCart}
+                disabled={!cartSessionId || !activeSize || !convexProductId || justAdded}
+                aria-label={justAdded ? "Added to bag" : "Add to bag"}
+                className="block w-full px-4 py-3 text-center text-xs font-semibold uppercase tracking-[0.22em] text-white"
               >
-                Buy now
-              </a>
+                {justAdded ? "Added ✓" : "Buy now"}
+              </button>
             </GlassPill>
           </GlassSurface>
         </div>
