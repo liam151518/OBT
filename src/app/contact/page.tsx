@@ -1,38 +1,16 @@
-import { ContactCard } from "@/components/landing/contact-card";
-import { NavPill } from "@/components/landing/nav-pill";
-import { PolishedShader } from "@/components/landing/polished-shader";
+import { ContactForm } from "@/components/site/contact-form";
 
-/**
- * Contact page.
- *
- * Composition: same as the landing and shop pages — the animated
- * PolishedShader sits as a fixed full-viewport layer behind the
- * content. The shader relies on its host element being `fixed
- * inset-0`, otherwise the canvas renders at body size and looks
- * black (it positions absolutely INSIDE its parent).
- *
- * On top:
- *   - ContactCard glass panel, centered in the viewport.
- *   - NavPill floats above everything.
- */
+export const metadata = { title: "Contact" };
+
 export default function ContactPage() {
   return (
-    <>
-      {/*
-        Shader layer. The wrapper MUST be `fixed inset-0 z-0` — the
-        PolishedShader component renders a `<Canvas className="absolute
-        inset-0">` which only covers the viewport when its parent is
-        itself positioned + sized to the viewport. (See
-        polished-shader.tsx; LandingExperience does the same wrap.)
-      */}
-      <div className="fixed inset-0 z-0">
-        <PolishedShader />
-      </div>
-
-      <main className="relative z-10 flex min-h-screen items-center justify-center px-4 py-24 sm:px-6">
-        <ContactCard />
-      </main>
-      <NavPill />
-    </>
+    <main className="mx-auto max-w-[1440px] px-6 py-12">
+      <p className="text-xs uppercase tracking-[0.22em] text-ink/50">Contact</p>
+      <h1 className="mt-2 font-serif text-5xl tracking-tight">Write to us</h1>
+      <p className="mt-4 max-w-md text-ink/70">
+        Orders, sizing, or a question about the standard. We read every note.
+      </p>
+      <ContactForm />
+    </main>
   );
 }

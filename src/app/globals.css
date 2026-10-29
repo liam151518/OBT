@@ -1,9 +1,18 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: var(--font-sans), "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-serif: var(--font-display), Baskerville, Georgia, serif;
+  --color-ink: #0e0e0e;
+  --color-bone: #f3efe7;
+  --color-ember: #c2410c;
+  --color-studio: #eceae4;
+}
+
 html,
 body {
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #0e0e0e;
 }
 
 * {
@@ -11,23 +20,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Product detail page uses a "single-screen experience" — the page
-   itself never scrolls; only the image stack inside scrolls. We scope
-   this to a class on the page wrapper so the landing / shop pages,
-   which have long-scrolling content, are unaffected. */
-.no-page-scroll {
-  height: 100vh;
-  overflow: hidden;
-  overscroll-behavior: none;
+@keyframes obt-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-/* Product detail image stack — hide the scrollbar so the polished
-   look stays clean. Wheel, drag, and touch all still work; only the
-   bar is hidden. */
-.image-stack {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE / legacy Edge */
+.obt-marquee {
+  animation: obt-marquee 42s linear infinite;
 }
-.image-stack::-webkit-scrollbar {
-  display: none; /* Chromium / Safari */
+
+.obt-marquee:hover {
+  animation-play-state: paused;
 }

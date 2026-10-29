@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>One Body Temple — Brand kit</title>
+  <style>
+    :root {
+      --ink: #0e0e0e;
+      --bone: #f3efe7;
+      --ember: #c2410c;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bone); color: var(--ink); }
+    body {
+      font-family: Baskerville, "Libre Baskerville", Georgia, serif;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+    main { max-width: 980px; margin: 0 auto; padding: 72px 28px 120px; }
+    .kicker {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+    h1 {
+      font-weight: 400;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 0 0 18px;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 32px;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    p { margin: 0 0 12px; max-width: 38em; }
+    .rule { height: 1px; background: var(--ember); border: 0; margin: 56px 0 28px; }
+    .stage {
+      background: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 220px;
+      padding: 48px 32px;
+    }
+    .stage.dark { background: var(--ink); }
+    .stage img { width: min(640px, 100%); height: auto; }
+    .stage.symbol img { width: 160px; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 700px) { .grid, .swatches, .type-row { grid-template-columns: 1fr; } }
+    .cap {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 8px; }
+    .swatch { min-height: 140px; padding: 14px; display: flex; flex-direction: column; justify-content: flex-end; }
+    .swatch strong, .swatch span {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    .ink { background: var(--ink); color: var(--bone); }
+    .bone { background: var(--bone); color: var(--ink); border: 1px solid rgba(14,14,14,0.15); }
+    .ember { background: var(--ember); color: var(--bone); }
+    .white { background: var(--white); color: var(--ink); border: 1px solid rgba(14,14,14,0.12); }
+    .type-row { display: grid; grid-template-columns: 1.2fr 1fr; gap: 28px; align-items: end; }
+    .display { font-size: 42px; line-height: 1.05; margin: 0; }
+    .label {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin: 0;
+    }
+    table { width: 100%; border-collapse: collapse; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; font-size: 13px; }
+    th, td { text-align: left; padding: 8px 10px 8px 0; border-bottom: 1px solid rgba(14,14,14,0.15); font-weight: 500; }
+    ul { padding-left: 18px; max-width: 40em; }
+    li { margin: 6px 0; }
+    a { color: var(--ember); }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="kicker">One Body Temple</p>
+    <h1>Brand kit</h1>
+    <p>Your body is a temple. Honor it through how you live.</p>
+    <p>The wordmark below is the live logo, traced from the existing artwork. Nothing here replaces it.</p>
+
+    <hr class="rule" />
+    <p class="kicker">Primary</p>
+    <h2>Wordmark</h2>
+    <div class="grid">
+      <div>
+        <div class="stage"><img src="masters/obt-wordmark.svg" alt="OBT wordmark in ink" /></div>
+        <p class="cap">Ink on white</p>
+      </div>
+      <div>
+        <div class="stage dark"><img src="masters/obt-wordmark-white.svg" alt="OBT wordmark in white" /></div>
+        <p class="cap">White on ink</p>
+      </div>
+    </div>
+
+    <hr class="rule" />
+    <p class="kicker">When the name needs to be said</p>
+    <h2>Stacked lockup</h2>
+    <div class="stage"><img src="masters/obt-stacked.svg" alt="OBT wordmark with One Body Temple underneath" /></div>
+    <p class="cap">Wordmark, then the name. The name is a label, not part of the drawn mark.</p>
+
+    <hr class="rule" />
+    <p class="kicker">Small sizes</p>
+    <h2>The O</h2>
+    <p>Use the ring alone at 16 px, in an avatar, or anywhere the full wordmark would collapse. It is the O measured from the logo, not a new symbol.</p>
+    <div class="grid">
+      <div>
+        <div class="stage symbol"><img src="masters/obt-symbol.svg" alt="OBT symbol" /></div>
+        <p class="cap">Symbol</p>
+      </div>
+      <div>
+        <div class="stage symbol dark"><img src="masters/obt-symbol-on-tile.svg" alt="OBT app icon" /></div>
+        <p class="cap">App icon</p>
+      </div>
+    </div>
+
+    <hr class="rule" />
+    <p class="kicker">Colour</p>
+    <h2>Ink, bone, ember</h2>
+    <p>The mark is one colour. Ember is the accent for rules and large type. It is not the default logo colour.</p>
+    <div class="swatches">
+      <div class="swatch ink"><strong>Ink</strong><span>#0E0E0E</span></div>
+      <div class="swatch bone"><strong>Bone</strong><span>#F3EFE7</span></div>
+      <div class="swatch ember"><strong>Ember</strong><span>#C2410C</span></div>
+      <div class="swatch white"><strong>White</strong><span>#FFFFFF</span></div>
+    </div>
+
+    <hr class="rule" />
+    <p class="kicker">Type</p>
+    <h2>Two jobs</h2>
+    <div class="type-row">
+      <p class="display">Train like it means something.</p>
+      <p class="label">One body temple</p>
+    </div>
+    <p style="margin-top:22px">Headlines are Baskerville. Labels are Helvetica Neue, widely tracked. On the web, use Libre Baskerville and Inter. The wordmark is neither.</p>
+
+    <hr class="rule" />
+    <p class="kicker">Space and size</p>
+    <h2>Clear space</h2>
+    <p>Leave one bar-height of the logo empty on every side. At minimum: wordmark 120 px / 32 mm wide. Stacked lockup 160 px / 40 mm. Symbol 16 px / 6 mm.</p>
+
+    <hr class="rule" />
+    <p class="kicker">Do not</p>
+    <ul>
+      <li>Stretch it, rotate it, or add a shadow.</li>
+      <li>Recolour it outside ink, white, and ember.</li>
+      <li>Typeset the letters OBT and call that the logo.</li>
+      <li>Split the letters apart, or put the symbol next to the wordmark.</li>
+    </ul>
+
+    <hr class="rule" />
+    <p class="kicker">Files</p>
+    <table>
+      <tr><th>Masters</th><td>brand-kit/masters</td></tr>
+      <tr><th>One-colour SVGs</th><td>brand-kit/digital</td></tr>
+      <tr><th>Web icons</th><td>brand-kit/web</td></tr>
+      <tr><th>Tests</th><td>brand-kit/preview/tests.html</td></tr>
+      <tr><th>In-use board</th><td>brand-kit/presentation/board.html</td></tr>
+      <tr><th>This page, in words</th><td>brand-kit/guidelines.md</td></tr>
+    </table>
+    <p style="margin-top:28px">Questions: hello@obtapparel.com</p>
+  </main>
+</body>
+</html>
