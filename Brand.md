@@ -4,7 +4,7 @@
 **Source:** `OBT_BrandCampaign (2).pdf` — *One Body Temple | Brand Campaign Playbook 2025*
 **Full playbook:** `Philisophy and Copy.md` (local only — voice, pillars, campaign lines, word bank)
 
-The live site uses the thin wordmark. Both logo files below are the saved masters.
+The live site uses the thin wordmark as SVG: `public/obt-wordmark-white.svg` on dark, `public/obt-wordmark-black.svg` on light. The header, footer, and favicon all use that mark. The PNG below is the source master.
 
 The full kit built from that wordmark is in `brand-kit/` (open `brand-kit/index.html`). Colours: Ink `#0E0E0E`, Bone `#F3EFE7`, Ember `#C2410C`. The wordmark stays one colour. Ember is the accent, not a second logo.
 
@@ -12,7 +12,7 @@ The full kit built from that wordmark is in `brand-kit/` (open `brand-kit/index.
 
 | File | Use | Size |
 |---|---|---|
-| `Logo/OBT Thin Logo White.png` | Live site mark. Same file as `public/obt-logo.png`. | 948×387, white on transparent |
+| `Logo/OBT Thin Logo White.png` | Source master for the live mark. Same pixels as `public/obt-logo.png`. The site serves the SVG copies. | 948×387, white on transparent |
 | `Logo/OBT Logo.png` | Bold wordmark from the earlier brand set. Not on the site. | 958×381, white on transparent |
 
 Both are a single connected OBT wordmark: the O is a circle, the top of the O runs into the crossbar of the T, the B sits under that bar.

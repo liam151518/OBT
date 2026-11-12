@@ -1,7 +1,9 @@
 # Graph Report - obt-apparel  (2026-11-12)
 
 ## Corpus Check
-- Corpus is ~49,782 words - fits in a single context window. You may not need a graph.
+- 72 files · ~52,834 words
+- Verdict: corpus is large enough that graph structure adds value.
+- Unclassified: 5 file(s) not represented in the graph (top: (none) 2, .mdc 1, .ico 1)
 
 ## Summary
 - 396 nodes · 654 edges · 21 communities (15 shown, 6 thin omitted)

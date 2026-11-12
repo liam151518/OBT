@@ -8,7 +8,7 @@
 - **Versions:**
   - Primary wordmark — `digital/obt-wordmark-black.svg` on light, `digital/obt-wordmark-white.svg` on dark
   - Stacked — wordmark over ONE BODY TEMPLE — `digital/obt-stacked-black.svg` / `obt-stacked-white.svg`
-  - Symbol — the O alone, for favicons, avatars, and embroidery under 20 mm — `digital/obt-symbol-black.svg`
+  - Symbol — the O alone, for avatars and embroidery under 20 mm — `digital/obt-symbol-black.svg`. The website favicon is the thin wordmark on ink, not this symbol.
 - **Files:** SVG in `digital/` for screens and print. Do not recreate the wordmark by typing “OBT”.
 
 ## 2. Clear space
@@ -25,7 +25,7 @@ Nothing else sits in that zone: no tagline closer than the bar’s height, no bo
 | Stacked lockup | 160 px wide | 40 mm wide |
 | Symbol (the O) | 16 px | 6 mm |
 
-Below those sizes, use the symbol, not the wordmark.
+Below those sizes, use the symbol, not the wordmark. The website tab icon is the exception: it is the thin wordmark on an ink square.
 
 ## 4. Colour
 
