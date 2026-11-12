@@ -1,0 +1,402 @@
+{
+  "nodes": [
+    {
+      "id": "brand_md_one_body_temple",
+      "label": "One Body Temple",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_md_vision",
+      "label": "OBT vision",
+      "file_type": "rationale",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_md_mission",
+      "label": "OBT mission",
+      "file_type": "rationale",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_md_anchor",
+      "label": "Anchor line",
+      "file_type": "rationale",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_md_ink",
+      "label": "Ink",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_md_bone",
+      "label": "Bone",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_md_ember",
+      "label": "Ember",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_md_wordmark",
+      "label": "OBT wordmark",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "context_md_storefront",
+      "label": "OBT storefront",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "context_md_no_prices",
+      "label": "No invented prices",
+      "file_type": "rationale",
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "context_md_convex_prod",
+      "label": "Convex production qualified-anteater-360",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "context_md_guest_cart",
+      "label": "Guest cart session",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "agents_md_read_context",
+      "label": "Read CONTEXT.md first",
+      "file_type": "rationale",
+      "source_file": "/Volumes/Content SSD/obt-apparel/AGENTS.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    },
+    {
+      "id": "brand_kit_guidelines_clear_space",
+      "label": "Logo clear space",
+      "file_type": "concept",
+      "source_file": "/Volumes/Content SSD/obt-apparel/brand-kit/guidelines.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "_origin": "semantic"
+    }
+  ],
+  "edges": [
+    {
+      "source": "brand_md_vision",
+      "target": "brand_md_one_body_temple",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_mission",
+      "target": "brand_md_one_body_temple",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_anchor",
+      "target": "brand_md_one_body_temple",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_one_body_temple",
+      "target": "brand_md_one_body_temple",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_one_body_temple",
+      "target": "brand_md_wordmark",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_ink",
+      "target": "brand_md_one_body_temple",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_bone",
+      "target": "brand_md_one_body_temple",
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_ember",
+      "target": "brand_md_one_body_temple",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_storefront",
+      "target": "src_components_site_site_shell_siteshell",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_storefront",
+      "target": "src_components_site_home_view_homeview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_storefront",
+      "target": "src_components_site_product_view_productview",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_guest_cart",
+      "target": "convex_cart_add",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_guest_cart",
+      "target": "src_components_site_product_view_productview_onadd",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_guest_cart",
+      "target": "src_components_site_site_shell_cartdrawer",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_no_prices",
+      "target": "src_components_site_product_view_productview",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "brand_md_anchor",
+      "target": "src_components_site_site_shell_lines",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "agents_md_read_context",
+      "target": "context_md_storefront",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/AGENTS.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_convex_prod",
+      "target": "convex_cart",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    },
+    {
+      "source": "context_md_convex_prod",
+      "target": "convex_contact_submit",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "/Volumes/Content SSD/obt-apparel/CONTEXT.md",
+      "source_location": null,
+      "weight": 1.0,
+      "_origin": "semantic"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "obt_brand_system",
+      "label": "OBT brand system",
+      "nodes": [
+        "brand_md_one_body_temple",
+        "brand_md_vision",
+        "brand_md_mission",
+        "brand_md_anchor",
+        "brand_md_wordmark"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "/Volumes/Content SSD/obt-apparel/Brand.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

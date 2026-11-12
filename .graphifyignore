@@ -1,0 +1,17 @@
+# Keep the graph on source and docs. Product photos and the hero film
+# are assets, not knowledge, and they blow the corpus past a useful size.
+public/products/
+public/hero/
+Product Designs/
+brand-kit/preview/
+brand-kit/web/
+brand-kit/digital/
+brand-kit/masters/
+brand-kit/presentation/
+Logo/
+public/obt-logo.png
+public/glass-displacement.png
+public/glass-specular.png
+node_modules/
+.next/
+.venv-rembg/

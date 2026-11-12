@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "graphify": {
+      "command": "graphify-mcp",
+      "args": [
+        "--graph",
+        "/Volumes/Content SSD/obt-apparel/graphify-out/graph.json"
+      ],
+      "description": "OBT Apparel knowledge graph (code, brand, and project context). This workspace overrides the global Graphify server, which points at a different repo."
+    }
+  }
+}

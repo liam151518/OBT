@@ -47,6 +47,9 @@ Philisophy and Copy.md
 # Python venv used for background-removal script (local-only)
 .venv-rembg/
 
+# Graphify rebuild cache. The graph itself (graph.json, GRAPH_REPORT.md) stays.
+graphify-out/cache/
+
 # ---------------------------------------------------------------------------
 # Product image PNGs — superseded by .webp versions (the storefront only
 # references the .webp files now). The PNGs are kept on disk for browsers

@@ -1,0 +1,12 @@
+---
+description: OBT Apparel project context for every chat
+alwaysApply: true
+---
+
+Read `CONTEXT.md` at the repo root before making changes. It is the current map of routes, Convex, brand, and commands.
+
+Brand voice and vision are in `Brand.md`. Do not invent prices, reviews, or a Tapstitch link on the storefront.
+
+For how code fits together, query this repo's graph before broad file searches. The graph is `graphify-out/graph.json`. This workspace's Graphify server is set in `.cursor/mcp.json` to that file. If a tool result is about a different repo, call it again with `project_path` set to this workspace.
+
+After structural code changes, run `./scripts/refresh-graph.sh`.
