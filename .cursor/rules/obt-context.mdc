@@ -3,7 +3,7 @@ description: OBT Apparel project context for every chat
 alwaysApply: true
 ---
 
-Read `CONTEXT.md` at the repo root before making changes. It is the current map of routes, Convex, brand, and commands.
+Read `CONTEXT.md` at the repo root before making changes. It is the current map of routes, Convex, hosting, the live domain, brand, and commands.
 
 Brand voice and vision are in `Brand.md`. Do not invent prices, reviews, or a Tapstitch link on the storefront.
 

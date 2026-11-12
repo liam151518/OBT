@@ -162,13 +162,12 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               Menu
             </button>
             <Link href="/" aria-label="One Body Temple — home" className="shrink-0">
-              <Image
-                src={overHero ? "/obt-logo.png" : "/obt-logo.png"}
-                alt="One Body Temple"
+              <img
+                src={overHero ? "/obt-wordmark-white.svg" : "/obt-wordmark-black.svg"}
+                alt=""
                 width={948}
                 height={387}
-                priority
-                className={`h-7 w-auto sm:h-8 ${overHero ? "" : "invert"}`}
+                className="h-7 w-auto sm:h-8"
               />
             </Link>
           </div>
@@ -500,7 +499,15 @@ function SiteFooter() {
       <div className="mx-auto max-w-[1400px] px-6 py-16 sm:px-10">
         <div className="flex flex-col gap-14 lg:flex-row lg:gap-16">
           <div className="max-w-xs">
-            <p className="text-base text-white">One Body Temple</p>
+            <Link href="/" aria-label="One Body Temple — home" className="inline-block">
+              <img
+                src="/obt-wordmark-white.svg"
+                alt=""
+                width={948}
+                height={387}
+                className="h-12 w-auto"
+              />
+            </Link>
             <p className="mt-3 text-base leading-6 text-white/70">
               Your body is a temple. Honor it through how you live. You are not bound by what you were yesterday;
               every morning, you get to decide who you are.

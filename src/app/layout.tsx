@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Libre_Baskerville } from "next/font/google";
 import { ConvexClientProvider } from "@/components/convex-provider";
 import { SiteShell } from "@/components/site/site-shell";
@@ -16,12 +16,18 @@ const display = Libre_Baskerville({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://onebodytemple.co.za"),
+  applicationName: "One Body Temple",
   title: {
     default: "One Body Temple",
     template: "%s — One Body Temple",
   },
   description:
     "Premium apparel for people who believe the body is a gift: not to be neglected, not to be worshipped, but to be stewarded.",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0E0E0E",
 };
 
 export default function RootLayout({

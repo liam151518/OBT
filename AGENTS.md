@@ -1,6 +1,6 @@
 # OBT Apparel
 
-New chat: read `CONTEXT.md` before changing anything. Brand voice is `Brand.md`. Code questions go to the graph first.
+New chat: read `CONTEXT.md` before changing anything. It has the live domain, Vercel, Convex, and the email DNS split. Brand voice is `Brand.md`. Code questions go to the graph first.
 
 ```bash
 graphify query "your question"
