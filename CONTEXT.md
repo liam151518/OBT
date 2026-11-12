@@ -100,7 +100,7 @@ Convex production deployment: `qualified-anteater-360` (team `liam-37242`).
 - Colors: Ink `#0E0E0E`, Bone `#F3EFE7`, Ember `#C2410C`, White
 - Type: Libre Baskerville for headlines, Inter for UI. The wordmark is custom art, not a font.
 - Live mark: the thin wordmark. Header and footer use `public/obt-wordmark-white.svg` and `public/obt-wordmark-black.svg`. Source PNG: `public/obt-logo.png` (same file as `Logo/OBT Thin Logo White.png`). Bold master: `Logo/OBT Logo.png`
-- Favicon and home-screen icon: the O symbol, bone on ink. `src/app/favicon.ico` (16, 32, 48), `src/app/icon.svg`, `src/app/apple-icon.png`, plus `public/icon-192.png`, `public/icon-512.png`, and `public/maskable-512.png`
+- Favicon and home-screen icon: the thin wordmark on ink, the same mark as the header. `src/app/favicon.ico`, `src/app/icon.svg`, `src/app/apple-icon.png`, plus `public/icon-192.png`, `public/icon-512.png`, and `public/maskable-512.png`
 - Do not send customers to Tapstitch. `tapstitchUrl` is supplier-only.
 
 ## Catalog
